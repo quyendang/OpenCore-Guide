@@ -139,7 +139,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * LapicKernelPanic: Disables kernel panic on AP core lapic interrupt. Often needed on HP laptops.
 * PanicNoKextDump: Allows for reading kernel panics logs when kernel panics occurs.
 * ThirdPartyTrim: It is better to enable third party trim (if necessary) via terminal command trimforce.
-* XhciPortLimit: This the 15 port limit patch, use only while you create a [USB map](https://usb-map.gitbook.io/project/) when possible. Its use is NOT recomended long term.
+* XhciPortLimit: This the 15 port limit patch, use only while you create a usb map (ssdt-uiac.aml) or injector kext. Its use is NOT recomended long term.
 
 ![Kernel](https://i.imgur.com/DcafUhE.png)
 
