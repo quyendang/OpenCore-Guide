@@ -12,8 +12,7 @@ OpenCore is an alternative bootloader to CloverEFI or Chameleon. It is not only 
 * Z97 based systems require pure UEFI mode for booting (also known as Windows 8/10 mode).
 * Z390 based systems require workarounds to non working NVRAM.
 * VoodooPS2Controller needs to be injected first, Keyboard second and Mouse/Trackpad third.
-* NVMe issues if setup as a SATA device in BIOS.
-* Sometimes can't access other partitions on the drive, solution is to "bless" the drive with Startup Disk.
+* NVMe issues if set as a SATA device in BIOS.
 
 # Setting up OpenCore
 
