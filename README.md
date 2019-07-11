@@ -61,7 +61,7 @@ Here's what mine looks like:
 
 Keep in mind with config.plist in OpenCore, they are different from Clover’s config.plist, they cannot be mixed and matched. It is not recommended to duplicate every patch and option from your clover config. 
 
-First let’s duplicate the `sample.plist`, rename the duplicate to `config.plist` and open in Xcode.
+First let’s duplicate the `sample.plist`, rename the duplicate to `config.plist` and open in your .plist editor of choice.
 
 ![Base Config.plist](https://i.imgur.com/MklVb2Z.png)
 
@@ -83,7 +83,7 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 
 **Block**: Certain systems benefit from dropping some acpi tables, most modern desktops however require nothing in this section.
 
-**Patch**: In opencore we should be keeping ACPI patches to a minimum as they are often harmful and unnecessary. If your system absolutely needs something, you should add it in this section.
+**Patch**: In opencore we should be keeping ACPI patches to a minimum as they are often harmful and unnecessary. If your system absolutely needs something, you should add it in this section. Refer to configuration.pdf.
 
 **Quirk**: Certain ACPI fixes. Avoid unless necessary.
 
@@ -126,7 +126,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **Block**: Blocks kexts from loading. Sometimes needed for disabling Apple's trackpad driver for some laptops.
 
-**Patch**: Patches kexts (this is where you would add USB port limit patches and AMD CPU patches).
+**Patch**: Patches kexts.
 
 **Quirks**:
 
@@ -139,7 +139,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * LapicKernelPanic: Disables kernel panic on AP core lapic interrupt. Often needed on HP laptops.
 * PanicNoKextDump: Allows for reading kernel panics logs when kernel panics occurs.
 * ThirdPartyTrim: It is better to enable third party trim (if necessary) via terminal command trimforce.
-* XhciPortLimit: This is actually the 15 port limit patch, use only while you create a [USB map](https://usb-map.gitbook.io/project/) when possible. Its use is NOT recomended long term.
+* XhciPortLimit: This the 15 port limit patch, use only while you create a [USB map](https://usb-map.gitbook.io/project/) when possible. Its use is NOT recomended long term.
 
 ![Kernel](https://i.imgur.com/DcafUhE.png)
 
