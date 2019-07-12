@@ -140,7 +140,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * ThirdPartyTrim: It is better to enable third party trim (if necessary) via terminal command trimforce.
 * XhciPortLimit: This the 15 port limit patch, use only while you create a usb map (ssdt-uiac.aml) or injector kext. Its use is NOT recomended long term.
 
-![Kernel](https://i.imgur.com/DcafUhE.png)
+![Kernel](https://imgur.com/oh8TJV8.png)
 
 # Misc
 
