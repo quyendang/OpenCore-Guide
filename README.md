@@ -235,7 +235,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 **Quirks**:
 
 * ExitBootServicesDelay: 0 (Switch to 5 if running ASUS Z87-Pro with FileVault2).
-* IgnoreInvalidFlexRatio: (Fix for when MSR_FLEX_RATIO (0x194) can't be disabled in the BIOS, required for all pre-skylake based systems).
+* IgnoreInvalidFlexRatio: Required for almost all pre-skylake based systems.
 * IgnoreTextInGraphics: (Fix for UI corruption when both text and graphics outputs happen).
 * ProvideConsoleGop: (Again needed for most APTIO firmwares).
 * ReleaseUsbOwnership: (Releases USB controller from firmware driver).
