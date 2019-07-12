@@ -254,6 +254,5 @@ Remove Clover's Preference Pane (if installed) You can find that at: `/Library/P
 * [Apple](https://www.apple.com) for MacOS.
 * [Acidanthera](https://github.com/acidanthera) for everything they contribute to hackintosh.
 * [vit9696](https://github.com/vit9696) for OpenCore.
-* [khronokernel](https://github.com/khronokernel) for the lovely email. :D
-* [MacFriedIntel](https://github.com/MacFriedIntel) for not giving a shit. :D
+* [khronokernel](https://github.com/khronokernel) for the original guide. 
 * [Pavo-IM](https://github.com/Pavo-IM) for persistant corrections. :D
