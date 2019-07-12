@@ -86,6 +86,16 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 
 **Patch**: In opencore we should be keeping ACPI patches to a minimum as they are often harmful and unnecessary. If your system absolutely needs something, you should add it in this section. Refer to configuration.pdf.
 
+* Z, B, H, X299 systems
+- GFX0 to IGPU : Do not add this. It is automatically patched with the Lilu and WhatEverGreen.
+- HECI to IMEI : Do not add this. Same as patched with the Lilu and WhatEverGreen.
+
+ * X299 systems only
+- PC00 to PCI0 : Since the PC00 device has many PCI devices, recommend using Patch methods than rename using SSDT.
+- LPC0 to LPCB : Same as changing method in PC00 to PCI0
+- CPxx to PRxx : No need to rename CPU name. (does not affect sleep and wake up)
+- EC0 to EC : No need to rename. To refer to this document https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl 
+
 **Quirk**: Certain ACPI fixes. Avoid unless necessary.
 
 * FadtEnableReset: NO (Enable reboot and shutdown on legacy hardware, not recommended unless needed)
