@@ -101,17 +101,17 @@ waking from hibernation
 
 # DeviceProperties
 
-**Add**: Sets device properties from a map.
+**Add**: Injects Device properties.
 
 `PciRoot(0x0)/Pci(0x2,0x0)` -> `AAPL,ig-platform-id`
 
-* Applies Framebuffer patch, insert required value from Framebuffer guide [here](https://www.insanelymac.com/forum/topic/334899-intel-framebuffer-patching-using-whatevergreen/?tab=comments#comment-2626271). Don't forget to add Stolemem and patch-enable.
+* Applies Framebuffer patch, insert required value from Framebuffer guide [here](https://www.insanelymac.com/forum/topic/334899-intel-framebuffer-patching-using-whatevergreen/?tab=comments#comment-2626271). Don't forget to add Stolemem and patch-enable if necessary.
 
 `PciRoot(0x0)/Pci(0x1b,0x0)` -> `Layout-id`
 
-* Applies AppleALC audio injection, insert required value from AppleALC documentation [here](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs).
+* Injects Audio device layout id, insert required value from AppleALC documentation [here](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs).
 
-**Block**: Removes device properties from map (can delete, irrelevant for most users).
+**Block**: Removes device properties from map. Normally not required.
 
 ![DeviceProperties](https://i.imgur.com/8gujqhJ.png)
 
@@ -120,7 +120,7 @@ waking from hibernation
 **Add**: Here's where you specify which kexts to load, and the order in which they are loaded, Lilu.kext should be first!
 Plugins for other kexts should always come after the main kext. Lilu plugins- after Lilu, VirtualSMC plugins- after VirtualSMC etc.
 
-**Emulate**: Needed for spoofing unsupported CPUs like Pentiums and Celerons
+**Emulate**: Needed for spoofing CPU, for unsupported CPUs.
 
 * CpuidMask: When set to Zero, original CPU bit will be used
 * CpuidData: The value for the CPU spoofing, don't forget to swap hex
