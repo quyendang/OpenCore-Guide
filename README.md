@@ -84,7 +84,7 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 
 **Block**: Certain systems benefit from dropping some acpi tables, most modern desktops however require nothing in this section.
 
-**Patch**: In opencore we should be keeping ACPI patches to a minimum as they are often harmful and unnecessary. If your system absolutely needs something, you should add it in this section. Refer to configuration.pdf.
+**Patch**: In opencore we should be keeping ACPI device renames to a minimum as they are often harmful and unnecessary. If your system absolutely needs something, you should add it in this section. Refer to configuration.pdf.
 
 **Quirk**: Certain ACPI fixes. Avoid unless necessary.
 
