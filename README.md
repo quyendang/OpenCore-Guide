@@ -27,7 +27,7 @@ Requirements:
 * Xcode (or other plist editor) to edit .plist files.
 * USB formatted as MacOS Journaled with GUID partition map. This is to test opencore without overwriting your working Clover.
 * Knowledge of how a hackintosh works and what files yours requires.
-* A working Hackintosh to test on.
+* A previously setup and functioning hackintosh is assumed.
 * Time and patience. Without these, you are wasting your effort. 
 
 # Creating the USB
