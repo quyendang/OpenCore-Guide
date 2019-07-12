@@ -23,7 +23,7 @@ Requirements:
 * [AptioFixPkg](https://github.com/acidanthera/AptioFixPkg/releases)
 * [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases)
 * [Lilu](https://github.com/acidanthera/Lilu/releases)
-* [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases)
+* [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases) FakeSMC is (in this guide) not recommended.
 * Xcode (or other plist editor) to edit .plist files.
 * USB formatted as MacOS Journaled with GUID partition map. This is to test opencore without overwriting your working Clover.
 * Knowledge of how a hackintosh works and what files yours requires.
