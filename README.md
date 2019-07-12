@@ -69,7 +69,7 @@ First let’s duplicate the `sample.plist`, rename the duplicate to `config.plis
 The config contains a number of sections:
 
 * ACPI: This is for loading, blocking and patching the ACPI.
-* DeviceProperties: This is where you'd set PCI device patches like the Intel Framebuffer patch.
+* DeviceProperties: This is where you'd set PCI device patches like the Intel Framebuffer patch or Rename PCI devices.
 * Kernel: Where we tell OpenCore what kexts to load, what order to load and which to block.
 * Misc: Settings for OpenCore's boot loader itself.
 * NVRAM: This is where we set NVRAM properties like boot flags and SIP.
