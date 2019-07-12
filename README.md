@@ -86,11 +86,14 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 
 **Patch**: In opencore we should be keeping ACPI device renames to a minimum as they are often harmful and unnecessary. If your system absolutely needs something, you should add it in this section. Refer to configuration.pdf.
 
-* Z, B, H, X299 systems
-- GFX0 to IGPU : Do not add this. It is automatically patched with the Lilu and WhatEverGreen.
-- HECI to IMEI : Do not add this. Same as patched with the Lilu and WhatEverGreen.
+* For example, common device renames are handled now by WhateverGreen on-the-fly and in a safer way:
+- GFX0 to IGPU
+- HECI to IMEI
+* Do NOT do these in the config.plist nor in DSDT/SSDT.
 
- * X299 systems only
+* Do NOT rename EC0 to EC as this can cause an incompatible kext (AppleAPIC) to load and cause strange issues at any time or a non bootable system.
+
+ * For X299 systems only
 - PC00 to PCI0 : Since the PC00 device has many PCI devices, recommend using Patch methods than rename using SSDT.
 - LPC0 to LPCB : Same as changing method in PC00 to PCI0
 - CPxx to PRxx : No need to rename CPU name. (does not affect sleep and wake up)
