@@ -122,8 +122,8 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **Emulate**: Needed for spoofing CPU, for unsupported CPUs.
 
-* CpuidMask: When set to Zero, original CPU bit will be used
-* CpuidData: The value for the CPU spoofing, don't forget to swap hex
+* CpuidMask: When set to Zero, original CPU bit will be used.
+* CpuidData: The value for the CPU spoofing, don't forget to hex swap.
 
 **Block**: Blocks kexts from loading. Sometimes needed for disabling Apple's trackpad driver for some laptops.
 
@@ -149,21 +149,21 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 **Boot**: Settings for boot screen.
 * Timeout: This sets how long OpenCore will wait until it automatically boots from the default selection
 * ShowPicker: If you need to see the picker screen, you better choose YES.
-* UsePicker: Uses OpenCore's default GUI, set to NO if you wish to use a different GUI.
+* UsePicker: Want to boot with opencore? must choose yes.
 * Target: Setting for logging type (by default logging output is hidden).
 * HideSelf : If you want to hide EFI partion on OC Bootloader choose YES.
 * HibernateMode : Recommended set to None.
 * ConsoleBeHaviousOs : Set to ForceGraphics for most system.
 * ConsoleBehaviousUI : Set to Text for most system.
 
-** You won't boot with Open Core Bootloader If you not set to YES at Show Picker and UsePicker.
+** You won't boot with Open Core Bootloader If you not set to YES at UsePicker.
 
 **Debug**: Debug has special use cases, leave as-is unless you know what you're doing.
 * DisableWatchDog: (May need to be set to yes if macOS is stalling while logging to file is enabled).
 
 **Security**:
-* RequireSignature: We won't be dealing vault.plist so we can ignore.
-* RequireVault: We won't be dealing vault.plist so we can ignore as well.
+* RequireSignature: See detailed explanation in configuration.pdf
+* RequireVault: For now choose NO.
 * ScanPolicy: Allows customization of disk and file system types which are scanned (and shown) by opencore at boot time.
 
 **Tools** Used for running OC debugging tools like clearing NVRAM, we'll be ignoring this.
