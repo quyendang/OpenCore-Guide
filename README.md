@@ -176,7 +176,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 **Debug**:
 * DisableWatchDog: (May need to be set to yes if macOS is stalling while logging to file is enabled).
 * Target: Logging level. 67 enables full logging to screen and file. (find log file on root of EFI partition).
-                         0 fully disables boot log.
+0 fully disables boot log.
 
 **Security**:
 * RequireSignature: See detailed explanation in configuration.pdf
