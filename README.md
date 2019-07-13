@@ -137,8 +137,8 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **Emulate**: Needed for spoofing CPU, for unsupported CPUs.
 
-* CpuidMask: When set to Zero, original CPU bit will be used.
-* CpuidData: The value for the CPU spoofing, don't forget to hex swap.
+* CpuidMask: When set to zero, original CPU bit will be used.
+* CpuidData: The value for the CPU spoofing, hex swappped.
 
 **Block**: Blocks kexts from loading. Sometimes needed for disabling Apple's trackpad driver for some laptops.
 
