@@ -29,7 +29,7 @@ Requirements:
 * [Lilu](https://github.com/acidanthera/Lilu/releases)
 * [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases) *FakeSMC is (in this guide) not recommended.*
 * Xcode (or other plist editor) to edit .plist files.
-* USB formatted as MacOS Journaled with GUID partition map. This is to test opencore without overwriting your working Clover.
+* USB drive formatted as MacOS Journaled with GUID partition map. This is to test opencore without overwriting your working Clover.
 * Knowledge of how a hackintosh works and what files yours requires.
 * A previously setup and functioning hackintosh is assumed.
 * Time and patience. Without these, you are wasting your effort. 
@@ -54,7 +54,7 @@ To setup OpenCore’s folder structure, you’ll want to grab those files from O
 
 ![base EFI folder](https://imgur.com/GRP7KU6.png)
 
-Now you can place your necessary .efi drivers from AppleSupportPkg and AptioFixPkg into the *drivers* folder and kexts/ACPI into their respective folders. Please note that UEFI drivers are not supported with OpenCore!
+Place your necessary .efi drivers from AppleSupportPkg and AptioFixPkg into the *drivers* folder and kexts/ACPI into their respective folders.
 
 Here's what mine looks like:
 
@@ -62,7 +62,7 @@ Here's what mine looks like:
 
 # Setting up your config.plist
 
-Keep in mind with config.plist in OpenCore, they are different from Clover’s config.plist, they cannot be mixed and matched. It is not recommended to duplicate every patch and option from your clover config. 
+Keep in mind with config.plist in OpenCore, it is different from Clover’s config.plist, they cannot be mixed and matched. It is not recommended to duplicate every patch and option from your clover config. 
 
 First let’s duplicate the `sample.plist`, rename the duplicate to `config.plist` and open in your .plist editor of choice.
 
@@ -74,7 +74,7 @@ The config contains a number of sections:
 * DeviceProperties: This is where you'd set PCI device patches like the Intel Framebuffer patch or Rename PCI devices.
 * Kernel: Where we tell OpenCore what kexts to load, what order to load and which to block.
 * Misc: Settings for OpenCore's boot loader itself.
-* NVRAM: This is where we set NVRAM properties like boot flags and SIP.
+* NVRAM: This is where we set certain NVRAM properties like boot flags and SIP.
 * Platforminfo: This is where we setup your SMBIOS.
 * UEFI: UEFI drivers and related options. 
 
@@ -171,9 +171,9 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * ConsoleBeHaviousOs : Set to ForceGraphics for most system.
 * ConsoleBehaviousUI : Set to Text for most system.
 
-** You won't boot with Open Core Bootloader If you not set to YES at UsePicker.
+** You won't boot with Open Core Bootloader If you do not set YES at UsePicker.
 
-**Debug**: Debug has special use cases, leave as-is unless you know what you're doing.
+**Debug**:
 * DisableWatchDog: (May need to be set to yes if macOS is stalling while logging to file is enabled).
 
 **Security**:
@@ -194,14 +194,14 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
    * `00000000` - SIP completely enabled
    * `30000000` - Allow unsigned kexts and writing to protected fs locations
    * `E7030000` - SIP completely disabled
-* nvda_drv:  <> (For enabling Nvidia WebDrivers, set to 31 if running a [Maxwell or Pascal GPU](https://github.com/khronokernel/Catalina-GPU-Buyers-Guide/blob/master/README.md#Unsupported-nVidia-GPUs). This is the same as setting nvda_drv=1 but instead we translate it from [text to hex](https://www.browserling.com/tools/hex-to-text))
+* nvda_drv:  <> (For enabling Nvidia WebDrivers, set to 31 if running a Maxwell or Pascal GPU. This is the equivalent to setting nvda_drv=1 but instead we convert it from text to hex.
 * prev-lang:kbd: <> (Needed for non-latin keyboards) If you find Russian, you didnt read the manual...
 
 **Block**: Forcibly rewrites NVRAM variables, not needed for us as `sudo nvram` is prefered but useful for those edge cases.
 
 **LegacyEnable** Allows for NVRAM to be stored on nvram.plist for systems without working NVRAM.
 
-**LegacySchema** Used for assigning nvram variable
+**LegacySchema** Used for assigning nvram variable on such systems. 
 
 ![NVRAM](https://i.imgur.com/MPFj3TS.png)
 
