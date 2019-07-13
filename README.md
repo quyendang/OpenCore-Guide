@@ -1,3 +1,4 @@
+![logo](https://imgur.com/YEZO0rg.png)
 # Getting Started With OpenCore
 A brief guide to using the OpenCore bootloader for hackintosh.
 
