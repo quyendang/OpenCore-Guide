@@ -172,6 +172,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * ConsoleBehaviousUI : Set to Text for most system.
 
 ** You won't boot with Open Core Bootloader If you do not set YES at UsePicker.
+** If you want to make macOS the default boot disk, set 'System Preferences > Startup Disk > (macOS boot disk)' as the default boot disk. The macOS disk must be named 'Macintosh HD' or it will not work.
 
 **Debug**:
 * DisableWatchDog: (May need to be set to yes if macOS is stalling while logging to file is enabled).
