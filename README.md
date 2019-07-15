@@ -16,7 +16,7 @@ OpenCore is an alternative bootloader to CloverEFI or Chameleon. It is not only 
 * Certain kexts must be injected in the correct order or they will not function. VoodooPS2 for example.
 * NVMe issues if set as a SATA device in BIOS.
 * Some motherboards may not allow boot ordering such as bless (X299, Z390).
-* If some motherboards fail to boot Bootcamp, you must change the NVMe slot.
+* If some motherboards fail to boot Bootcamp from NVMe you must change the slot.
 
 # Setting up OpenCore
 
