@@ -135,6 +135,8 @@ waking from hibernation
 **Add**: Here's where you specify which kexts to load, and the order in which they are loaded, Lilu.kext should be first!
 Plugins for other kexts should always come after the main kext. Lilu plugins- after Lilu, VirtualSMC plugins- after VirtualSMC etc.
 
+* Users of the AMD VEGA FE 16GB model can boot without WhatEverGreen.Kext and can connect to the DP 3 port and display without blackout.
+
 **Emulate**: Needed for spoofing CPU, for unsupported CPUs.
 
 * CpuidMask: When set to zero, original CPU bit will be used.
@@ -279,3 +281,4 @@ Remove Clover's Preference Pane (if installed) You can find that at: `/Library/P
 * [vit9696](https://github.com/vit9696) for OpenCore.
 * [khronokernel](https://github.com/khronokernel) for the original guide. 
 * [Pavo-IM](https://github.com/Pavo-IM) for persistant corrections. :D
+* [ZISQO](https://github.com/zisqo) to translate this guide for korean language.
