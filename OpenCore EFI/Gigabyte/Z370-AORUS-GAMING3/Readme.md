@@ -9,7 +9,7 @@ Kext Used:
 - Lilu
 - WahteverGreen
 - AppleALC
-- IntelMausiEthernet
+- AtherosE2200Ethernet
 - VirtualSMC
 - SMCProcessor
 - SMCSuperIO
