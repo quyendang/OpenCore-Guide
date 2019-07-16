@@ -24,7 +24,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Base on ZISQO&apos;s Setting</string>
+				<string>Base on ZISQO's Setting</string>
 				<key>Enabled</key>
 				<false/>
 				<key>Path</key>
@@ -56,7 +56,9 @@
 			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
 				<key>layout-id</key>
-				<data>BwAAAA==</data>
+				<data>
+				BwAAAA==
+				</data>
 			</dict>
 		</dict>
 		<key>Block</key>
@@ -237,7 +239,9 @@
 			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
 			<dict>
 				<key>UIScale</key>
-				<data>AQ==</data>
+				<data>
+				AQ==
+				</data>
 			</dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
@@ -246,9 +250,13 @@
 				<key>bootercfg</key>
 				<string>log=0 debug=0 level=0</string>
 				<key>csr-active-config</key>
-				<data>ZwAAAA==</data>
+				<data>
+				ZwAAAA==
+				</data>
 				<key>prev-lang:kbd</key>
-				<data>ZW5fR0I6MjUw</data>
+				<data>
+				ZW5fR0I6MjUw
+				</data>
 			</dict>
 		</dict>
 		<key>Block</key>
@@ -263,7 +271,9 @@
 			<key>MLB</key>
 			<string></string>
 			<key>ROM</key>
-			<data>TTMlJ189</data>
+			<data>
+			TTMlJ189
+			</data>
 			<key>SpoofVendor</key>
 			<false/>
 			<key>SystemProductName</key>

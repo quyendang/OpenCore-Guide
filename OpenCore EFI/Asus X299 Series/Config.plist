@@ -40,7 +40,9 @@
 			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
 				<key>layout-id</key>
-				<data>BwAAAA==</data>
+				<data>
+				BwAAAA==
+				</data>
 			</dict>
 		</dict>
 		<key>Block</key>
@@ -173,9 +175,11 @@
 		<key>Emulate</key>
 		<dict>
 			<key>Cpuid1Data</key>
-			<data></data>
+			<data>
+			</data>
 			<key>Cpuid1Mask</key>
-			<data></data>
+			<data>
+			</data>
 		</dict>
 		<key>Patch</key>
 		<array/>
@@ -273,16 +277,22 @@
 			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
 			<dict>
 				<key>UIScale</key>
-				<data>EA==</data>
+				<data>
+				EA==
+				</data>
 			</dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
 				<string>darkwake=0</string>
 				<key>csr-active-config</key>
-				<data>MHgwNjc=</data>
+				<data>
+				MHgwNjc=
+				</data>
 				<key>prev-lang:kbd</key>
-				<data>ZW46MA==</data>
+				<data>
+				ZW46MA==
+				</data>
 			</dict>
 		</dict>
 		<key>Block</key>
@@ -333,7 +343,9 @@
 			<key>MLB</key>
 			<string></string>
 			<key>ROM</key>
-			<data>NjJDNTY3OTgyMDlG</data>
+			<data>
+			NjJDNTY3OTgyMDlG
+			</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
