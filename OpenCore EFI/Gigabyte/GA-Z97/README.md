@@ -1,5 +1,7 @@
 #  GA-Z97
 
+IGPU HD4600
+
 SMBIOS Used:
 - iMac14,1
 
