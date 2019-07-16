@@ -16,7 +16,7 @@
 			</dict>
 			<dict>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Comment</key>
 				<string>usbignore</string>
 				<key>Path</key>
