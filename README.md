@@ -46,7 +46,7 @@ Next we'll want to mount the EFI partition on the USB with either diskutil termi
 
 You'll notice that once we open the EFI partition, it's empty.
 
-![Empty EFI partition](https://i.imgur.com/EDeZB3u.png)
+![Empty EFI partition](https://imgur.com/LzQWJIo.png)
 
 # Base folder structure
 
