@@ -332,7 +332,7 @@
 				<key>Comment</key>
 				<string>USBMAP</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string></string>
 				<key>MatchKernel</key>
