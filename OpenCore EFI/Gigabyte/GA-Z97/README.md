@@ -10,7 +10,7 @@ Kext Used:
 - RealtekRTL8111
 - VirtualSMC
 - WhateverGreen
-- USBInjectAll
+* For USB need create a usb map using hackintool *
 
 Drivers Used:
 - ApfsDriverLoader
