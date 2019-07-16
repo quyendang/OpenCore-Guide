@@ -1,4 +1,4 @@
-#  GA-Z370-D3H
+#  GA-Z370-AORUS-GAMING5
 
 IGPU UHD630
 
@@ -17,7 +17,7 @@ Kext Used:
 
 Drivers Used:
 - ApfsDriverLoader
-- AptioInputFix
-- AptioMemoryFix
+- EmuVariableUefi
+- OsxAptioFix2Drv-free2000
 - VirtualSMC
 - HfsPlus
