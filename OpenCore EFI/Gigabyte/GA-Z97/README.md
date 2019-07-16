@@ -15,5 +15,5 @@ Kext Used:
 Drivers Used:
 - ApfsDriverLoader
 - AptioMemoryFix
-- VirutalSMC
+- VirtualSMC
 - HfsPlus
