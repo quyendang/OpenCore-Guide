@@ -58,7 +58,7 @@ Place your necessary .efi drivers from AppleSupportPkg and AptioFixPkg into the 
 
 Here's what mine looks like:
 
-![Populated EFI folder](https://imgur.com/197TEcApng.png)
+![Populated EFI folder](https://imgur.com/197TEcA.png)
 
 # Setting up your config.plist
 
