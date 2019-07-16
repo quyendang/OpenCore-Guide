@@ -1,4 +1,4 @@
-#  GA-Z370-D3H
+#  GA-Z390-DESIGNARE
 
 IGPU UHD630
 
@@ -10,14 +10,13 @@ Kext Used:
 - WahteverGreen
 - AppleALC
 - IntelMausiEthernet
+- SmallTreeIntel82576
 - VirtualSMC
-- SMCProcessor
-- SMCSuperIO
 * For USB need create a usb map using hackintool *
 
 Drivers Used:
 - ApfsDriverLoader
-- AptioInputFix
-- AptioMemoryFix
+- EmuVariableUefi
+- OsxAptioFix2Drv-free2000
 - VirtualSMC
 - HfsPlus
