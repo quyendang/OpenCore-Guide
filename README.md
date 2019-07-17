@@ -52,7 +52,7 @@ You'll notice that once we open the EFI partition, it's empty.
 
 To setup OpenCore’s folder structure, you’ll want to grab those files from OpenCorePkg and construct your EFI to look like the one below:
 
-![base EFI folder](https://i.imgur.com/pJxQp0J.png)
+![base EFI folder](https://i.imgur.com/mKWlmCK.png)
 
 Place your necessary .efi drivers from AppleSupportPkg and AptioFixPkg into the *drivers* folder and kexts/ACPI into their respective folders.
 
@@ -66,7 +66,7 @@ Keep in mind with config.plist in OpenCore, it is different from Clover’s conf
 
 First let’s duplicate the `sample.plist`, rename the duplicate to `config.plist` and open in your .plist editor of choice.
 
-![Base Config.plist](https://i.imgur.com/MklVb2Z.png)
+![Base Config.plist](https://i.imgur.com/pJxQp0J.png)
 
 The config contains a number of sections:
 
