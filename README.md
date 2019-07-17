@@ -38,7 +38,7 @@ Requirements:
 * Knowledge of how a hackintosh works and what files yours requires.
 * A previously setup and functioning hackintosh is assumed. * Which you are happy to potentially break *
 * Time and patience. Without these, you are wasting your effort.
-* If you need any extra help join our discord [InsanelyMacdiscord] (https://discord.gg/EdmdKRW)
+* [InsanelyMacdiscord](https://discord.gg/EdmdKRW)If you need any extra help join our discord 
 
 
 # Creating the USB
