@@ -192,7 +192,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 # NVRAM
 
-**Add**: 7C436110-AB2A-4BBB-A880-FE41995C9F82 (GUID bitmask)
+**Add**: 7C436110-AB2A-4BBB-A880-FE41995C9F82 (APPLE_BOOT_VARIABLE_GUID)
 
 * boot-args: -v debug=0x100 keepsyms=1 , etc (Boot flags)
 * csr-active-config: <00000000> (Settings for SIP, recommeded to manully change this within Recovery partition with csrutil. 
@@ -202,7 +202,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * nvda_drv:  <> (For enabling Nvidia WebDrivers, set to 31 if running a Maxwell or Pascal GPU. This is the equivalent to setting nvda_drv=1 but instead we convert it from text to hex.
 * prev-lang:kbd: <> (Needed for non-latin keyboards) If you find Russian, you didnt read the manual...
 
-**Add**: 4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14 (GUID bitmask)
+**Add**: 4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14 (OC_VENDOR_VARIABLE_GUID)
 * UIScale : NVRAM variable may need to be set to 02 to enable HiDPI scaling in FileVault 2 UEFI password interface and boot screen logo. but using a 10, you can see the big apple logo with HiDPI. Most use 10, 02, 01(it just up to you).
 * This will fail when console handle has no GOP protocol. When the firmware does not provide it, it can be added with ProvideConsoleGop UEFI quirk set to 'YES´and in protocols section ´ConsoleControl´to YES.
 
