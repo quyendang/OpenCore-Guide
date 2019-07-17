@@ -95,7 +95,7 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 
 * Do NOT rename EC0 to EC as this can cause an incompatible kext (AppleAPIC) to load and cause strange issues at any time or a non bootable system.
 
- * For X299 systems only
+ * For X299 systems only:
 - PC00 to PCI0 : Since the PC00 device has many PCI devices, recommend using Patch methods than rename using SSDT.
 - LPC0 to LPCB : Same as changing method in PC00 to PCI0
 - CPxx to PRxx : No need to rename CPU name. (does not affect sleep and wake up)
@@ -211,9 +211,9 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **Block**: Forcibly rewrites NVRAM variables, not needed for us as `sudo nvram` is prefered but useful for those edge cases.
 
-**LegacyEnable** Allows for NVRAM to be stored on nvram.plist for systems without working NVRAM.
+**LegacyEnable:** Allows for NVRAM to be stored on nvram.plist for systems without working NVRAM.
 
-**LegacySchema** Used for assigning nvram variable on such systems. 
+**LegacySchema:** Used for assigning nvram variable on such systems. 
 
 [Emulated NVRAM Guide](https://macprodude.github.io/Emulated-NVRAM/)
 
