@@ -128,7 +128,7 @@ waking from hibernation
 
 `PciRoot(0x0)/Pci(0x2,0x0)` -> `AAPL,ig-platform-id`
 
-* Applies Framebuffer patch, insert required value from Framebuffer guide [here](https://www.insanelymac.com/forum/topic/334899-intel-framebuffer-patching-using-whatevergreen/?tab=comments#comment-2626271). Don't forget to add Stolemem and patch-enable if necessary.
+* Sets integrated graphics framebuffer, insert required value from Framebuffer guide [here](https://www.insanelymac.com/forum/topic/334899-intel-framebuffer-patching-using-whatevergreen/?tab=comments#comment-2626271). Don't forget to add Stolemem and patch-enable if necessary.
 
 `PciRoot(0x0)/Pci(0x1b,0x0)` -> `Layout-id`
 
