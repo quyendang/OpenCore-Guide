@@ -241,7 +241,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **UpdateSMBIOSMode**: Create (Replace the tables with newly allocated EfiReservedMemoryType)
 
-![PlatformInfo](https://i.imgur.com/kLDxPAp.png)
+![PlatformInfo](https://i.imgur.com/kLDxPApb.png)
 
 # UEFI
 
