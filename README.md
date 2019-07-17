@@ -141,7 +141,10 @@ waking from hibernation
 **Add**: Here's where you specify which kexts to load, and the order in which they are loaded, Lilu.kext should be first!
 Plugins for other kexts should always come after the main kext. Lilu plugins- after Lilu, VirtualSMC plugins- after VirtualSMC etc.
 
-* Users of the AMD VEGA FE 16GB model can boot without WhatEverGreen.Kext and can connect to the DP 3 port and display without blackout.
+* Users of the AMD VEGA FE 16GB model can boot without WhatEverGreen.Kext and can connect to the DP 3 port without getting blackscreen.
+
+
+
 
 **Emulate**: Needed for spoofing CPU, for unsupported CPUs.
 
