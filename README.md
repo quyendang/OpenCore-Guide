@@ -38,27 +38,27 @@ Requirements:
 
 Creating the USB is simple, format a stick as MacOS Journaled with GUID partition map. There is no real size requirement for the USB as OpenCore's entire EFI is less than 5MB.
 
-![Formatting the USB](https://imgur.com/7RLK7mf.png)
+![Formatting the USB](https://i.imgur.com/pvoewuT.png)
 
 Next we'll want to mount the EFI partition on the USB with either diskutil terminal command or Clover Configurator.
 
-![mountEFI](https://imgur.com/KXjVzpr.png)
+![mountEFI](https://i.imgur.com/yCWBGoJ.png)
 
 You'll notice that once we open the EFI partition, it's empty.
 
-![Empty EFI partition](https://imgur.com/4u3ZYkA.png)
+![Empty EFI partition](https://i.imgur.com/4iLK9Gd.png)
 
 # Base folder structure
 
 To setup OpenCore’s folder structure, you’ll want to grab those files from OpenCorePkg and construct your EFI to look like the one below:
 
-![base EFI folder](https://i.imgur.com/mKWlmCK.png)
+![base EFI folder](https://i.imgur.com/4ZE7jYj.png)
 
 Place your necessary .efi drivers from AppleSupportPkg and AptioFixPkg into the *drivers* folder and kexts/ACPI into their respective folders.
 
 Here's what mine looks like:
 
-![Populated EFI folder](https://imgur.com/BVNrhnx.png)
+![Populated EFI folder](https://i.imgur.com/rrJ0Nc4.png)
 
 # Setting up your config.plist
 
@@ -66,7 +66,7 @@ Keep in mind with config.plist in OpenCore, it is different from Clover’s conf
 
 First let’s duplicate the `sample.plist`, rename the duplicate to `config.plist` and open in your .plist editor of choice.
 
-![Base Config.plist](https://i.imgur.com/pJxQp0J.png)
+![Base Config.plist](https://i.imgur.com/oDGVALF.png)
 
 The config contains a number of sections:
 
@@ -110,7 +110,7 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 waking from hibernation
 * ResetLogoStatus: Workaround for systems running BGRT tables
 
-![ACPI](https://i.imgur.com/CR8SV8H.png)
+![ACPI](https://i.imgur.com/WSa88oU.png)
 
 &#x200B;
 
@@ -128,7 +128,7 @@ waking from hibernation
 
 **Block**: Removes device properties from map. Normally not required.
 
-![DeviceProperties](https://i.imgur.com/uwAQiks.png)
+![DeviceProperties](https://i.imgur.com/TEKKxPf.png)
 
 # Kernel
 
@@ -159,7 +159,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * ThirdPartyTrim: It is better to enable third party trim (if necessary) via terminal command trimforce.
 * XhciPortLimit: This the 15 port limit patch, use only while you create a usb map (ssdt-uiac.aml) or injector kext. Its use is NOT recomended long term.
 
-![Kernel](https://i.imgur.com/9BsCkDC.png)
+![Kernel](https://i.imgur.com/vQqn5eo.png)
 
 # Misc
 
@@ -188,7 +188,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **Tools** Used for running OC debugging tools like clearing NVRAM, we'll be ignoring this.
 
-![Misc](https://i.imgur.com/BHbr0uy.png)
+![Misc](https://i.imgur.com/tpr1OcL.png)
 
 # NVRAM
 
@@ -212,7 +212,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **LegacySchema** Used for assigning nvram variable on such systems. 
 
-![NVRAM](https://i.imgur.com/lsBQyWz.png)
+![NVRAM](https://i.imgur.com/aQp4Ya2.png)
 
 # Platforminfo
 
@@ -244,7 +244,7 @@ Fill all these fields to match your clover smbios
 
 **UpdateSMBIOSMode**: Create (Replace the tables with newly allocated EfiReservedMemoryType)
 
-![PlatformInfo](https://i.imgur.com/EwZWCyC.png)
+![PlatformInfo](https://i.imgur.com/icsZ1BD.png)
 
 # UEFI
 
@@ -269,7 +269,7 @@ Fill all these fields to match your clover smbios
 * RequestBootVarRouting: (Recommended to be enabled on all systems for correct update installation, Startup Disk control panel functioning, etc.
 * SanitiseClearScreen: (Fixes High resolutions displays that display OpenCore in 1024x768) Also necessary on select AMD GPUs on Z370.
 
-![UEFI](https://i.imgur.com/eoMxUed.png)
+![UEFI](https://i.imgur.com/tWJllin.png)
 
 
 # And now you are ready to test boot!
