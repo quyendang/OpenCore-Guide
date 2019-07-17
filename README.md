@@ -12,7 +12,7 @@ OpenCore is an alternative bootloader to CloverEFI or Chameleon. It is not only 
 # Current known issues
 
 * Z97 based systems require pure UEFI mode for booting (also known as Windows 8/10 mode).
-* Z390 based systems require workarounds to non working NVRAM.
+* Z390 based systems require workarounds to non working NVRAM. https://github.com/MacProDude/Emulated-NVRAM
 * Certain kexts must be injected in the correct order or they will not function properly. 
 * NVMe issues if set as a SATA device in BIOS.
 * Some motherboards may not allow boot ordering such as bless (X299, Z390).
@@ -211,6 +211,8 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 **LegacyEnable** Allows for NVRAM to be stored on nvram.plist for systems without working NVRAM.
 
 **LegacySchema** Used for assigning nvram variable on such systems. 
+
+https://github.com/MacProDude/Emulated-NVRAM
 
 ![NVRAM](https://i.imgur.com/aQp4Ya2.png)
 
