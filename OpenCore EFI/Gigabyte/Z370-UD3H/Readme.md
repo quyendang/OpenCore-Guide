@@ -17,7 +17,7 @@
 
  Drivers Used:
 - ApfsDriverLoader
-- AptioInputFix
-- AptioMemoryFix
+- OsxAptioFix2Drv-free2000
+- EmuVariableUefi
 - VirtualSMC
 - HfsPlus
