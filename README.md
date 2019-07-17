@@ -52,7 +52,7 @@ You'll notice that once we open the EFI partition, it's empty.
 
 To setup OpenCore’s folder structure, you’ll want to grab those files from OpenCorePkg and construct your EFI to look like the one below:
 
-![base EFI folder](https://imgur.com/GRP7KU6.png)
+![base EFI folder](https://i.imgur.com/pJxQp0J.png)
 
 Place your necessary .efi drivers from AppleSupportPkg and AptioFixPkg into the *drivers* folder and kexts/ACPI into their respective folders.
 
