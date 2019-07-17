@@ -17,8 +17,8 @@ Kext Used:
 
 Drivers Used:
 - ApfsDriverLoader
-- EmuVariableUefi
-- OsxAptioFix2Drv-free2000
+- AptioInputFix
+- AptioMemoryFix
 - HfsPlus
 - VirtualSMC
 
