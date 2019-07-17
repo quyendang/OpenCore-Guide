@@ -110,7 +110,7 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 waking from hibernation
 * ResetLogoStatus: Workaround for systems running BGRT tables
 
-![ACPI](https://imgur.com/WaGa6PT.png)
+![ACPI](https://i.imgur.com/CR8SV8H.png)
 
 &#x200B;
 
@@ -159,7 +159,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * ThirdPartyTrim: It is better to enable third party trim (if necessary) via terminal command trimforce.
 * XhciPortLimit: This the 15 port limit patch, use only while you create a usb map (ssdt-uiac.aml) or injector kext. Its use is NOT recomended long term.
 
-![Kernel](https://imgur.com/oh8TJV8.png)
+![Kernel](https://i.imgur.com/9BsCkDC.png)
 
 # Misc
 
@@ -212,7 +212,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **LegacySchema** Used for assigning nvram variable on such systems. 
 
-![NVRAM](https://i.imgur.com/MPFj3TS.png)
+![NVRAM](https://i.imgur.com/lsBQyWz.png)
 
 # Platforminfo
 
