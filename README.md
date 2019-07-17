@@ -128,7 +128,7 @@ waking from hibernation
 
 **Block**: Removes device properties from map. Normally not required.
 
-![DeviceProperties](https://i.imgur.com/ku36dbD.png)
+![DeviceProperties](https://i.imgur.com/uwAQiks.png)
 
 # Kernel
 
