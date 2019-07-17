@@ -283,7 +283,6 @@ Fill all these fields to match your clover smbios
 
 When you are happy opencore boots your system correctly, simply mount your Clover efi partition, (back it up somewhere safe) and overwrite it with your OpenCore one. Certain system BIOS may require you to manually remove Clover as an EFI boot option (and extra special system might need a factory reset to permanently remove it).
 
-Remove Clover's Preference Pane (if installed) You can find that at: `/Library/PreferencePanes/Clover.prefPane`.
 
 # Credit
 * [Apple](https://www.apple.com) for MacOS.
