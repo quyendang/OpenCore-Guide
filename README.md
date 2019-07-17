@@ -104,7 +104,7 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 - EC0 to EC : No need to rename. To refer to this document 
 [SSDT-EC-USBX](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl)
 
-**Quirk**: Certain ACPI fixes. Avoid unless necessary.
+**Quirks**: Certain ACPI fixes. Avoid unless necessary.
 
 * FadtEnableReset: NO (Enable reboot and shutdown on legacy hardware, not recommended unless needed)
 * NormalizeHeaders: Cleanup ACPI header fields, irrelevant in 10.14
