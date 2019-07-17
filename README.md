@@ -128,7 +128,7 @@ waking from hibernation
 
 **Block**: Removes device properties from map. Normally not required.
 
-![DeviceProperties](https://i.imgur.com/8gujqhJ.png)
+![DeviceProperties](https://i.imgur.com/7BYnRJO.png)
 
 # Kernel
 
@@ -188,7 +188,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **Tools** Used for running OC debugging tools like clearing NVRAM, we'll be ignoring this.
 
-![Misc](https://i.imgur.com/6NPXq0A.png)
+![Misc](https://i.imgur.com/BHbr0uy.png)
 
 # NVRAM
 
@@ -241,7 +241,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **UpdateSMBIOSMode**: Create (Replace the tables with newly allocated EfiReservedMemoryType)
 
-![PlatformInfo](https://i.imgur.com/dIKAlhj.png)
+![PlatformInfo](https://i.imgur.com/odU6tR3.png)
 
 # UEFI
 
@@ -266,7 +266,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * RequestBootVarRouting: (Recommended to be enabled on all systems for correct update installation, Startup Disk control panel functioning, etc.
 * SanitiseClearScreen: (Fixes High resolutions displays that display OpenCore in 1024x768) Also necessary on select AMD GPUs on Z370.
 
-![UEFI](https://i.imgur.com/acZ1PUA.png)
+![UEFI](https://i.imgur.com/eoMxUed.png)
 
 
 # And now you are ready to test boot!
