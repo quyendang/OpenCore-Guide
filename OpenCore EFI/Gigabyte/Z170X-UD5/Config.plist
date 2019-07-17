@@ -296,8 +296,8 @@
 		<key>Drivers</key>
 		<array>
 			<string>ApfsDriverLoader.efi</string>
-			<string>OsxAptioFix2Drv-free2000.efi</string>
-			<string>EmuVariableUefi.efi</string>
+			<string>AptioInputFix.efi</string>
+			<string>AptioMemoryFix.efi</string>
 			<string>HFSPlus.efi</string>
 			<string>VirtualSmc.efi</string>
 		</array>
@@ -325,7 +325,7 @@
 			<key>ReleaseUsbOwnership</key>
 			<false/>
 			<key>RequestBootVarRouting</key>
-			<false/>
+			<true/>
 			<key>SanitiseClearScreen</key>
 			<true/>
 		</dict>

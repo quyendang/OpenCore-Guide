@@ -1,4 +1,4 @@
-# GA-Z170-UD5
+# GA-Z170X-UD5
 
 IGPU UHD530
 
@@ -17,8 +17,7 @@ Kext Used:
 
 Drivers Used:
 - ApfsDriverLoader
-- EmuVariableUefi
-- OsxAptioFix2Drv-free2000
+- AptioInputFix
+- AptioMemoryFix
 - HfsPlus
 - VirtualSMC
-
