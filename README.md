@@ -232,13 +232,13 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * SystemProductName: Can be generated with MacSerial or use previous from Clover's config.plist.
 * SystemSerialNumber: Can be generated with MacSerial or use previous from Clover's config.plist.
 
-**DataHub**
+**DataHub**:
 Fill all these fields to match your clover smbios
 
-**PlatformNVRAM**
+**PlatformNVRAM**:
 Fill all these fields to match your clover smbios
 
-**SMBIOS**
+**SMBIOS**:
 Fill all these fields to match your clover smbios
 
 **UpdateDataHub**: YES (Update Data Hub fields)
