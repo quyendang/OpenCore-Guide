@@ -99,7 +99,8 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 - PC00 to PCI0 : Since the PC00 device has many PCI devices, recommend using Patch methods than rename using SSDT.
 - LPC0 to LPCB : Same as changing method in PC00 to PCI0
 - CPxx to PRxx : No need to rename CPU name. (does not affect sleep and wake up)
-- EC0 to EC : No need to rename. To refer to this document ![SSDT-EC-USBX](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl)
+- EC0 to EC : No need to rename. To refer to this document 
+[SSDT-EC-USBX](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl)
 
 **Quirk**: Certain ACPI fixes. Avoid unless necessary.
 
