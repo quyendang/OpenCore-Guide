@@ -271,7 +271,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 # And now you are ready to test boot!
 
-![AboutThisMac](https://i.imgur.com/MFq1qGr.png)
+![AboutThisMac](https://i.imgur.com/CKAzhfN.png)
 
 # Making Opencore your Main Bootloader
 
