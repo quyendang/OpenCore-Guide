@@ -21,4 +21,3 @@ Drivers Used:
 - AptioMemoryFix
 - HfsPlus
 - VirtualSMC
-
