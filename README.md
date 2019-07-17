@@ -192,7 +192,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * RequireVault: For now choose NO.
 * ScanPolicy: Allows customization of disk and file system types which are scanned (and shown) by opencore at boot time.
 
-**Tools**: Used for running OC debugging tools like clearing NVRAM, we'll be ignoring this.
+**Tools**: Used for running boot time tools like clearing NVRAM, or memtest86. Enable if required.
 
 ![Misc](https://i.imgur.com/tpr1OcL.png)
 
