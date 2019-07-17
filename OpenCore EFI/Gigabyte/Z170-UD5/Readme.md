@@ -1,11 +1,11 @@
-#  GA-Z370-UD3H
+# GA-Z170-UD5
 
- IGPU UHD630
+IGPU UHD530
 
- SMBIOS Used:
+SMBIOS Used:
 - iMacPro1,1
 
- Kext Used:
+Kext Used:
 - Lilu
 - WahteverGreen
 - AppleALC
@@ -15,9 +15,10 @@
 - SMCSuperIO
 * For USB need create a usb map using hackintool *
 
- Drivers Used:
+Drivers Used:
 - ApfsDriverLoader
-- OsxAptioFix2Drv-free2000
 - EmuVariableUefi
-- VirtualSMC
+- OsxAptioFix2Drv-free2000
 - HfsPlus
+- VirtualSMC
+

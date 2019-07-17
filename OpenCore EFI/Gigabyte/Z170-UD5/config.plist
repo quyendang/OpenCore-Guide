@@ -8,79 +8,25 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>PLUG</string>
+				<string>XCPM</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
-				<string>SSDT-B360M-PLUG.aml</string>
+				<string>SSDT-Z170-PLUG.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>USB EXTRA CHARGE</string>
+				<string>USBX</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
-				<string>SSDT-B360M-USBX.aml</string>
+				<string>SSDT-Z170-USBX.aml</string>
 			</dict>
 		</array>
 		<key>Block</key>
-		<array>
-			<dict>
-				<key>All</key>
-				<false/>
-				<key>Comment</key>
-				<string>Drop DMAR</string>
-				<key>Enabled</key>
-				<false/>
-				<key>OemTableId</key>
-				<data>
-				</data>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data>
-				RE1BUg==
-				</data>
-			</dict>
-		</array>
+		<array/>
 		<key>Patch</key>
-		<array>
-			<dict>
-				<key>Comment</key>
-				<string>Rename GFX0 to IGPU (Graphics)</string>
-				<key>Count</key>
-				<integer>1</integer>
-				<key>Enabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				R0ZYMA==
-				</data>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data>
-				</data>
-				<key>OemTableId</key>
-				<data>
-				</data>
-				<key>Replace</key>
-				<data>
-				SUdQVQ==
-				</data>
-				<key>ReplaceMask</key>
-				<data>
-				</data>
-				<key>Skip</key>
-				<integer>0</integer>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data>
-				RFNEVA==
-				</data>
-			</dict>
-		</array>
+		<array/>
 		<key>Quirks</key>
 		<dict>
 			<key>FadtEnableReset</key>
@@ -158,8 +104,6 @@
 			<dict>
 				<key>BundlePath</key>
 				<string>VirtualSMC.kext</string>
-				<key>Comment</key>
-				<string>SMC</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -170,8 +114,6 @@
 			<dict>
 				<key>BundlePath</key>
 				<string>SMCProcessor.kext</string>
-				<key>Comment</key>
-				<string>SMC</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -182,8 +124,6 @@
 			<dict>
 				<key>BundlePath</key>
 				<string>SMCSuperIO.kext</string>
-				<key>Comment</key>
-				<string>SMC</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -193,13 +133,13 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>RealtekRTL8111.kext</string>
+				<string>IntelMausiEthernet.kext</string>
 				<key>Comment</key>
-				<string>Ethernet I</string>
+				<string>Ethernet</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/RealtekRTL8111</string>
+				<string>Contents/MacOS/IntelMausiEthernet</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -214,93 +154,7 @@
 			</dict>
 		</array>
 		<key>Patch</key>
-		<array>
-			<dict>
-				<key>Count</key>
-				<integer>1</integer>
-				<key>Enabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				dS4Ptg==
-				</data>
-				<key>Identifier</key>
-				<string>com.apple.driver.AppleRTC</string>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data>
-				</data>
-				<key>MatchKernel</key>
-				<string></string>
-				<key>Replace</key>
-				<data>
-				6y4Ptg==
-				</data>
-				<key>ReplaceMask</key>
-				<data>
-				</data>
-				<key>Skip</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>Count</key>
-				<integer>1</integer>
-				<key>Enabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				dTMPtw==
-				</data>
-				<key>Identifier</key>
-				<string>com.apple.driver.AppleRTC</string>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data>
-				</data>
-				<key>MatchKernel</key>
-				<string>18.5.0</string>
-				<key>Replace</key>
-				<data>
-				6zMPtw==
-				</data>
-				<key>ReplaceMask</key>
-				<data>
-				</data>
-				<key>Skip</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>Base</key>
-				<string>_AcpiOsVprintf</string>
-				<key>Count</key>
-				<integer>0</integer>
-				<key>Enabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				</data>
-				<key>Identifier</key>
-				<string>com.apple.driver.AppleACPIPlatform</string>
-				<key>Limit</key>
-				<integer>0</integer>
-				<key>Mask</key>
-				<data>
-				</data>
-				<key>MatchKernel</key>
-				<string>18.5.0</string>
-				<key>Replace</key>
-				<data>
-				ww==
-				</data>
-				<key>ReplaceMask</key>
-				<data>
-				</data>
-				<key>Skip</key>
-				<integer>0</integer>
-			</dict>
-		</array>
+		<array/>
 		<key>Quirks</key>
 		<dict>
 			<key>AppleCpuPmCfgLock</key>
@@ -336,13 +190,13 @@
 			<key>ConsoleMode</key>
 			<string>Max</string>
 			<key>HideSelf</key>
-			<false/>
+			<true/>
 			<key>Resolution</key>
 			<string>Max</string>
 			<key>ShowPicker</key>
 			<true/>
 			<key>Timeout</key>
-			<integer>15</integer>
+			<integer>20</integer>
 			<key>UsePicker</key>
 			<true/>
 		</dict>
@@ -385,12 +239,10 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>npci=0x3000 darkwake=8</string>
-				<key>bootercfg</key>
-				<string>log=0 debug=0 level=0</string>
+				<string>darkwake=0 slide=0 dart=0</string>
 				<key>csr-active-config</key>
 				<data>
-				ZwAAAA==
+				BnAAAA==
 				</data>
 				<key>prev-lang:kbd</key>
 				<data>
@@ -399,19 +251,25 @@
 			</dict>
 		</dict>
 		<key>Block</key>
-		<dict/>
+		<dict>
+			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
+			<array>
+				<string>csr-active-config</string>
+				<string>boot-args</string>
+			</array>
+		</dict>
 	</dict>
 	<key>PlatformInfo</key>
 	<dict>
 		<key>Automatic</key>
-		<true/>
+		<false/>
 		<key>Generic</key>
 		<dict>
 			<key>MLB</key>
 			<string></string>
 			<key>ROM</key>
 			<data>
-			tC5JNjMd
+			SLB5eqWM
 			</data>
 			<key>SpoofVendor</key>
 			<false/>
@@ -438,38 +296,38 @@
 		<key>Drivers</key>
 		<array>
 			<string>ApfsDriverLoader.efi</string>
-			<string>VirtualSmc.efi</string>
-			<string>AptioInputFix.efi</string>
-			<string>AptioMemoryFix.efi</string>
+			<string>OsxAptioFix2Drv-free2000.efi</string>
+			<string>EmuVariableUefi.efi</string>
 			<string>HFSPlus.efi</string>
+			<string>VirtualSmc.efi</string>
 		</array>
 		<key>Protocols</key>
 		<dict>
 			<key>AppleBootPolicy</key>
 			<false/>
 			<key>ConsoleControl</key>
-			<false/>
+			<true/>
 			<key>DataHub</key>
 			<false/>
 			<key>DeviceProperties</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>Quirks</key>
 		<dict>
 			<key>ExitBootServicesDelay</key>
 			<integer>0</integer>
 			<key>IgnoreInvalidFlexRatio</key>
-			<false/>
-			<key>IgnoreTextInGraphics</key>
 			<true/>
+			<key>IgnoreTextInGraphics</key>
+			<false/>
 			<key>ProvideConsoleGop</key>
 			<true/>
 			<key>ReleaseUsbOwnership</key>
 			<false/>
 			<key>RequestBootVarRouting</key>
-			<true/>
-			<key>SanitiseClearScreen</key>
 			<false/>
+			<key>SanitiseClearScreen</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
