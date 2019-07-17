@@ -216,7 +216,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 # Platforminfo
 
-**Automatic**: YES (Generates PlatformInfo based on Generic section instead of DataHub, NVRAM, and SMBIOS sections).
+**Automatic**: NO
 
 **Generic**:
 
