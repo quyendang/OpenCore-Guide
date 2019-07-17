@@ -194,6 +194,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 # NVRAM
 
 **Add**
+
 **7C436110-AB2A-4BBB-A880-FE41995C9F82 (APPLE_BOOT_VARIABLE_GUID)**
 
 * boot-args: -v debug=0x100 keepsyms=1 , etc (Boot flags)
