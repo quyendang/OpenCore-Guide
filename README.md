@@ -128,7 +128,7 @@ waking from hibernation
 
 **Block**: Removes device properties from map. Normally not required.
 
-![DeviceProperties](https://i.imgur.com/7BYnRJO.png)
+![DeviceProperties](https://i.imgur.com/ku36dbD.png)
 
 # Kernel
 
@@ -241,7 +241,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **UpdateSMBIOSMode**: Create (Replace the tables with newly allocated EfiReservedMemoryType)
 
-![PlatformInfo](https://i.imgur.com/odU6tR3.png)
+![PlatformInfo](https://i.imgur.com/kLDxPAp.png)
 
 # UEFI
 
@@ -286,3 +286,4 @@ Remove Clover's Preference Pane (if installed) You can find that at: `/Library/P
 * [khronokernel](https://github.com/khronokernel) for the original guide. 
 * [Pavo-IM](https://github.com/Pavo-IM) for persistant corrections. :D
 * [ZISQO](https://github.com/zisqo) to translate this guide for korean language.
+* [MacProDude](https://github.com/MacProDude) for Images
