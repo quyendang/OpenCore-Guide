@@ -277,7 +277,7 @@ Fill all these fields to match your clover smbios
 
 # And now you are ready to test boot!
 
-![AboutThisMac](https://i.imgur.com/CKAzhfN.png)
+![AboutThisMac](https://i.imgur.com/BjQwhPC.png)
 
 # Making Opencore your default Bootloader
 
