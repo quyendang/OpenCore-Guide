@@ -196,7 +196,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 **7C436110-AB2A-4BBB-A880-FE41995C9F82 (APPLE_BOOT_VARIABLE_GUID)**
 
 * boot-args: -v debug=0x100 keepsyms=1 , etc (Boot flags)
-* csr-active-config: <00000000> **(Settings for SIP, recommeded to manully change this within Recovery partition with csrutil).**
+* csr-active-config: <00000000> **(Settings for SIP, recommended to manully change this within Recovery partition with csrutil).**
    * `00000000` - SIP completely enabled
    * `30000000` - Allow unsigned kexts and writing to protected fs locations
    * `E7030000` - SIP completely disabled
