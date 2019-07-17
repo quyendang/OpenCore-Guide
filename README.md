@@ -172,10 +172,10 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * ShowPicker: If you need to see the picker screen, you better choose YES.
 * UsePicker: Want to boot with opencore? must choose yes.
 * Target: Setting for logging type (by default logging output is hidden).
-* HideSelf : If you want to hide EFI partion on OC Bootloader choose YES.
+* HideSelf: If you want to hide EFI partion on OC Bootloader choose YES.
 * HibernateMode : Recommended set to None.
-* ConsoleBeHaviousOs : Set to ForceGraphics for most system.
-* ConsoleBehaviousUI : Set to Text for most system.
+* ConsoleBeHaviousOs: Set to ForceGraphics for most system.
+* ConsoleBehaviousUI: Set to Text for most system.
 
 ** You won't boot with Open Core Bootloader If you do not set YES at UsePicker.
 ** If you want to make macOS the default boot disk, set 'System Preferences > Startup Disk > (macOS boot disk)' as the default boot disk.
