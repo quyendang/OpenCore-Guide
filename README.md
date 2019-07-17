@@ -4,8 +4,6 @@
 
 OpenCore is an alternative bootloader to CloverEFI or Chameleon. It is not only for Hackintosh and can be used on real macs for purposes that require an emulated EFI. It also aims to have the ability to boot Windows and Linux. It has a clean codebase and aims to stay closer to how a real mac bootloader functions. Kext injection has been greatly improved. While already functioning well, OpenCore should be considered in alpha stage at this time and is intended to be used by experienced hackintosh users, developers or users who are happy to recover a system which fails to boot, or becomes broken in some way.
 
-# Getting Started
-
 **This guide may not always be able to keep up with every change to OpenCore, (currently OpenCore is in active development, and therefore a moving target) please keep that in mind when compiling the latest version of OpenCore. To be safe, use release versions of OpenCore rather than the latest commits. ** This guide is intended to complement the excellent opencore "configuration.pdf" rather than be used instead of it. If you did not already do so, please read it now: https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Configuration.pdf
 
 
@@ -18,7 +16,7 @@ OpenCore is an alternative bootloader to CloverEFI or Chameleon. It is not only 
 * Some motherboards may not allow boot ordering such as bless (X299, Z390).
 * If some motherboards fail to boot Bootcamp from NVMe you must change the slot.
 
-# Setting up OpenCore
+# Getting Started
 
 Requirements:
 
@@ -283,7 +281,6 @@ Fill all these fields to match your clover smbios
 
 When you are happy opencore boots your system correctly, simply mount your Clover efi partition, (back it up somewhere safe) and overwrite it with your OpenCore one. Certain system BIOS may require you to manually remove Clover as an EFI boot option (and extra special system might need a factory reset to permanently remove it).
 
-Remove Clover's Preference Pane (if installed) You can find that at: `/Library/PreferencePanes/Clover.prefPane`.
 
 # Credit
 * [Apple](https://www.apple.com) for MacOS.
