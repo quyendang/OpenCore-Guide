@@ -95,7 +95,7 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 - HECI to IMEI
 * Do NOT do these in the config.plist nor in DSDT/SSDT.
 
-* Do NOT rename EC0 to EC as this can cause an incompatible kext (AppleAPIC) to load and cause strange issues at any time or a non bootable system.
+* Do NOT rename EC0 to EC as this can cause an incompatible kext (AppleAPIEC) to load and cause strange issues at any time or a non bootable system.
 
  * For X299 systems only:
 - PC00 to PCI0 : Since the PC00 device has many PCI devices, recommend using Patch methods than rename using SSDT.
