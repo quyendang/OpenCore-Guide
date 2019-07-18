@@ -72,13 +72,13 @@ First let’s duplicate the `sample.plist`, rename the duplicate to `config.plis
 
 The config contains a number of sections:
 
-* ACPI: This is for loading, blocking and patching the ACPI.
-* DeviceProperties: This is where you'd set PCI device patches like the Intel Framebuffer patch or Rename PCI devices.
-* Kernel: Where we tell OpenCore what kexts to load, what order to load and which to block.
-* Misc: Settings for OpenCore's boot loader itself.
-* NVRAM: This is where we set certain NVRAM properties like boot flags and SIP.
-* Platforminfo: This is where we setup your SMBIOS.
-* UEFI: UEFI drivers and related options. 
+* **ACPI:** This is for loading, blocking and patching the ACPI.
+* **DeviceProperties:** This is where you'd set PCI device patches like the Intel Framebuffer patch or Rename PCI devices.
+* **Kernel:** Where we tell OpenCore what kexts to load, what order to load and which to block.
+* **Misc:** Settings for OpenCore's boot loader itself.
+* **NVRAM:** This is where we set certain NVRAM properties like boot flags and SIP.
+* **Platforminfo:** This is where we setup your SMBIOS.
+* **UEFI:** UEFI drivers and related options. 
 
 We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't you?
 
@@ -106,12 +106,12 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 
 **Quirks**: Certain ACPI fixes. Avoid unless necessary.
 
-* FadtEnableReset: NO (Enable reboot and shutdown on legacy hardware, not recommended unless needed)
-* NormalizeHeaders: Cleanup ACPI header fields, irrelevant in 10.14
-* RebaseRegions: Attempt to heuristically relocate ACPI memory regions
-* ResetHwSig: Needed for hardware that fail to maintain hardware signature across the reboots and cause issues with
+* **FadtEnableReset:** NO (Enable reboot and shutdown on legacy hardware, not recommended unless needed)
+* **NormalizeHeaders:** Cleanup ACPI header fields, irrelevant in 10.14
+* **RebaseRegions:** Attempt to heuristically relocate ACPI memory regions
+* **ResetHwSig:** Needed for hardware that fail to maintain hardware signature across the reboots and cause issues with
 waking from hibernation
-* ResetLogoStatus: Workaround for systems running BGRT tables
+* **ResetLogoStatus:** Workaround for systems running BGRT tables
 
 ![ACPI](https://i.imgur.com/WSa88oU.png)
 
@@ -154,43 +154,43 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **Quirks**:
 
-* AppleCpuPmCfgLock: Only needed when CFG-Lock can't be disabled in BIOS. Avoid unless necessary.
-* AppleXcpmCfgLock: Only needed when CFG-Lock can't be disabled in BIOS. Avoid unless necessary.
-* AppleXcpmExtraMsrs: Disables multiple MSR access needed for unsupported CPUs.
-* CustomSMBIOSGuid: Performs GUID patching for UpdateSMBIOSMode Custom mode. Usually relevant for Dell laptops.
-* DisbaleIOMapper: Preferred to dropping DMAR in ACPI section or disabling VT-D in bios.
-* ExternalDiskIcons: External Icons Patch, for when internal drives are treated as external drives
-* LapicKernelPanic: Disables kernel panic on AP core lapic interrupt. Often needed on HP laptops.
-* PanicNoKextDump: Allows for reading kernel panics logs when kernel panics occurs.
-* ThirdPartyTrim: Trimforce would be preferred via terminal, as most 3rd party Nvme and SSD's are now supported.
-* XhciPortLimit: This the 15 port limit patch, use only while you create a usb map (ssdt-uiac.aml) or injector kext. Its use is NOT recomended long term.
+* **AppleCpuPmCfgLock:** Only needed when CFG-Lock can't be disabled in BIOS. Avoid unless necessary.
+* **AppleXcpmCfgLock:** Only needed when CFG-Lock can't be disabled in BIOS. Avoid unless necessary.
+* **AppleXcpmExtraMsrs:** Disables multiple MSR access needed for unsupported CPUs.
+* **CustomSMBIOSGuid:** Performs GUID patching for UpdateSMBIOSMode Custom mode. Usually relevant for Dell laptops.
+* **DisableIOMapper:** Preferred to dropping DMAR in ACPI section or disabling VT-D in bios.
+* **ExternalDiskIcons:** External Icons Patch, for when internal drives are treated as external drives
+* **LapicKernelPanic:** Disables kernel panic on AP core lapic interrupt. Often needed on HP laptops.
+* **PanicNoKextDump:** Allows for reading kernel panics logs when kernel panics occurs.
+* **ThirdPartyTrim:** Trimforce would be preferred via terminal, as most 3rd party Nvme and SSD's are now supported.
+* **XhciPortLimit:** This the 15 port limit patch, use only while you create a usb map (ssdt-uiac.aml) or injector kext. Its use is NOT recomended long term.
 
 ![Kernel](https://i.imgur.com/vQqn5eo.png)
 
 # Misc
 
 **Boot**: Settings for boot screen.
-* Timeout: This sets how long OpenCore will wait until it automatically boots from the default selection
-* ShowPicker: If you need to see the picker screen, you better choose YES.
-* UsePicker: Want to boot with opencore? must choose yes.
-* Target: Setting for logging type (by default logging output is hidden).
-* HideSelf: If you want to hide EFI partion on OC Bootloader choose YES.
-* HibernateMode : Recommended set to None.
-* ConsoleBeHaviousOs: Set to ForceGraphics for most systems.
-* ConsoleBehaviousUI: Set to Text for most systems.
+* **Timeout:** This sets how long OpenCore will wait until it automatically boots from the default selection
+* **ShowPicker:** If you need to see the picker screen, you better choose YES.
+* **UsePicker:** Want to boot with opencore? must choose yes.
+* **Target:** Setting for logging type (by default logging output is hidden).
+* **HideSelf:** If you want to hide EFI partion on OC Bootloader choose YES.
+* **HibernateMode:** Recommended set to None.
+* **ConsoleBeHaviousOs:** Set to ForceGraphics for most systems.
+* **ConsoleBehaviousUI:** Set to Text for most systems.
 
 ** You won't be able to boot with Open Core Bootloader If you do not set **YES** at UsePicker.
 ** If you want to make macOS the default boot disk, set 'System Preferences > Startup Disk > (Your preferred OS disk)' as the default boot disk.
 
 **Debug**:
-* DisableWatchDog: (May need to be set to yes if macOS is stalling while logging to file is enabled).
-* Target: Logging level. 75 enables full logging to screen and file. (find log file on root of EFI partition).
+* **DisableWatchDog:** (May need to be set to yes if macOS is stalling while logging to file is enabled).
+* **Target:** Logging level. 75 enables full logging to screen and file. (find log file on root of EFI partition).
 0 fully disables boot log. (Debug Release of OpenCore maybe required for BugTracker with -keepsyms as boot-arg)
 
 **Security**:
-* RequireSignature: See detailed explanation in configuration.pdf
-* RequireVault: For now choose NO.
-* ScanPolicy: Allows customization of disk and file system types which are scanned (and shown) by opencore at boot time.
+* **RequireSignature:** See detailed explanation in configuration.pdf
+* **RequireVault:** For now choose NO.
+* **ScanPolicy:** Allows customization of disk and file system types which are scanned (and shown) by opencore at boot time.
 
 **Tools**: Used for running boot time tools like clearing NVRAM, EFIShell or memtest86. Enable if required.
 
@@ -202,12 +202,12 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **7C436110-AB2A-4BBB-A880-FE41995C9F82 (APPLE_BOOT_VARIABLE_GUID)**
 
-* boot-args: -v debug=0x100 keepsyms=1 , etc (Boot flags)
-* csr-active-config: <00000000> **(Settings for SIP, recommended to manully change this within Recovery partition with csrutil and preferred to leave as '00000000' in the config.plist file).**
+* **boot-args:** -v debug=0x100 keepsyms=1 , etc (Boot flags)
+* **csr-active-config:** <00000000> **(Settings for SIP, recommended to manully change this within Recovery partition with csrutil and preferred to leave as '00000000' in the config.plist file).**
    * `00000000` - SIP completely enabled
    * `30000000` - Allow unsigned kexts and writing to protected fs locations
    * `E7030000` - SIP completely disabled
-* nvda_drv:  <> (For enabling Nvidia WebDrivers, set to 31 if running a Maxwell or Pascal GPU. This is the equivalent to setting nvda_drv=1 but instead we convert it from text to hex.
+* **nvda_drv:**  <> (For enabling Nvidia WebDrivers, set to 31 if running a Maxwell or Pascal GPU. This is the equivalent to setting nvda_drv=1 but instead we convert it from text to hex.
 * prev-lang:kbd: <> (Needed for non-latin keyboards) If you find Russian, you didnt read the manual...
 
 **4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14 (APPLE_VENDOR_VARIABLE_GUID)**
@@ -230,12 +230,12 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **Generic**:
 
-* SpoofVendor: YES (This prevents issues with having "Apple,inc" as manufacturer).
-* SystemUUID: Can be generated with MacSerial or use previous from Clover's config.plist.
-* MLB: Can be generated with MacSerial or use previous from Clover's config.plist.
-* ROM: <> (6 character MAC address, can be entirely random but should be unique).
-* SystemProductName: Can be generated with MacSerial or use previous from Clover's config.plist.
-* SystemSerialNumber: Can be generated with MacSerial or use previous from Clover's config.plist.
+* **SpoofVendor:** YES (This prevents issues with having "Apple,inc" as manufacturer).
+* **SystemUUID:** Can be generated with MacSerial or use previous from Clover's config.plist.
+* **MLB:** Can be generated with MacSerial or use previous from Clover's config.plist.
+* **ROM:** <> (6 character MAC address, can be entirely random but should be unique).
+* **SystemProductName:** Can be generated with MacSerial or use previous from Clover's config.plist.
+* **SystemSerialNumber:** Can be generated with MacSerial or use previous from Clover's config.plist.
 
 **DataHub**:
 Fill all these fields to match your clover smbios
@@ -264,20 +264,20 @@ Fill all these fields to match your clover smbios
 
 **Protocols**:
 
-* AppleBootPolicy: (Ensures APFS compatibility on VMs or legacy Macs)
-* ConsoleControl: Needed on most APTIO firmwares otherwise you may see text output during booting instead of Apple logo
-* DataHub: (Reinstalls Data Hub)
-* DeviceProperties: (Ensures full compatibility on VMs or legacy Macs)
+* **AppleBootPolicy:** (Ensures APFS compatibility on VMs or legacy Macs)
+* **ConsoleControl:** Needed on most APTIO firmwares otherwise you may see text output during booting instead of Apple logo
+* **DataHub:** (Reinstalls Data Hub)
+* **DeviceProperties:** (Ensures full compatibility on VMs or legacy Macs)
 
 **Quirks**:
 
-* ExitBootServicesDelay: 0 (Switch to 5 if running ASUS Z87-Pro with FileVault2).
-* IgnoreInvalidFlexRatio: Required for almost all pre-skylake based systems.
-* IgnoreTextInGraphics: (Fix for UI corruption when both text and graphics outputs happen).
-* ProvideConsoleGop: (needed when GPU doesn't have a GOP Firmware/Driver (Also check for CSM in BIOS and is Disabled).
-* ReleaseUsbOwnership: (Releases USB controller from firmware driver).
-* RequestBootVarRouting: (Recommended to be enabled on all systems for correct update installation, Startup Disk control panel functioning, etc.
-* SanitiseClearScreen: (Fixes High resolutions displays that display OpenCore in 1024x768) Also necessary on select AMD GPUs on Z370.
+* **ExitBootServicesDelay:** 0 (Switch to 5 if running ASUS Z87-Pro with FileVault2).
+* **IgnoreInvalidFlexRatio:** Required for almost all pre-skylake based systems.
+* **IgnoreTextInGraphics:** (Fix for UI corruption when both text and graphics outputs happen).
+* **ProvideConsoleGop:** (needed when GPU doesn't have a GOP Firmware/Driver (Also check for CSM in BIOS and is Disabled).
+* **ReleaseUsbOwnership:** (Releases USB controller from firmware driver).
+* **RequestBootVarRouting:** (Recommended to be enabled on all systems for correct update installation, Startup Disk control panel functioning, etc.
+* **SanitiseClearScreen:** (Fixes High resolutions displays that display OpenCore in 1024x768) Also necessary on select AMD GPUs on Z370.
 
 ![UEFI](https://i.imgur.com/tWJllin.png)
 
