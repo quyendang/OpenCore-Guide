@@ -136,7 +136,7 @@ waking from hibernation
 # Kernel
 
 **Add**: Here we can specify kexts to inject from our EFI into the kernel kextcache. 
-Order of kexts is important, they are loaded in this order. Plugins for other kexts should always come after the main kext. Lilu plugins- after Lilu, VirtualSMC plugins- after VirtualSMC etc.
+Order of kexts is important, they are loaded in this order. Plugins for other kexts should always come after the main kext. Lilu should be first, then Lilu plugins like WhateverGreen and VirtualSMC. 
 
 **Emulate**: Needed for spoofing CPU, for unsupported CPUs.
 
