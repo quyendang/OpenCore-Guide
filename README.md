@@ -274,7 +274,7 @@ Fill all these fields to match your clover smbios
 * ExitBootServicesDelay: 0 (Switch to 5 if running ASUS Z87-Pro with FileVault2).
 * IgnoreInvalidFlexRatio: Required for almost all pre-skylake based systems.
 * IgnoreTextInGraphics: (Fix for UI corruption when both text and graphics outputs happen).
-* ProvideConsoleGop: (Again needed for most APTIO firmwares).
+* ProvideConsoleGop: (needed when GPU doesn't have a GOP Firmware/Driver (Also check for CSM in BIOS and is Disabled).
 * ReleaseUsbOwnership: (Releases USB controller from firmware driver).
 * RequestBootVarRouting: (Recommended to be enabled on all systems for correct update installation, Startup Disk control panel functioning, etc.
 * SanitiseClearScreen: (Fixes High resolutions displays that display OpenCore in 1024x768) Also necessary on select AMD GPUs on Z370.
