@@ -138,7 +138,7 @@ waking from hibernation
 **Add**: Here's where you specify which kexts to load, patch and emulate. Also the order in which they are loaded, Lilu.kext should be first!
 Plugins for other kexts should always come after the main kext. Lilu plugins- after Lilu, VirtualSMC plugins- after VirtualSMC etc.
 
-* Users of the AMD VEGA FE 16GB model can boot without WhatEverGreen.Kext and can connect to the DP 3 port without getting blackscreen.
+* Users of the AMD VEGA FE 16GB model can boot without Whatevergreen.Kext and can connect to the DP 3 port without getting blackscreen.
 
 
 
@@ -176,10 +176,10 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * Target: Setting for logging type (by default logging output is hidden).
 * HideSelf: If you want to hide EFI partion on OC Bootloader choose YES.
 * HibernateMode : Recommended set to None.
-* ConsoleBeHaviousOs: Set to ForceGraphics for most system.
-* ConsoleBehaviousUI: Set to Text for most system.
+* ConsoleBeHaviousOs: Set to ForceGraphics for most systems.
+* ConsoleBehaviousUI: Set to Text for most systems.
 
-** You won't boot with Open Core Bootloader If you do not set YES at UsePicker.
+** You won't be able to boot with Open Core Bootloader If you do not set **YES** at UsePicker.
 ** If you want to make macOS the default boot disk, set 'System Preferences > Startup Disk > (macOS boot disk)' as the default boot disk.
 
 **Debug**:
@@ -203,7 +203,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 **7C436110-AB2A-4BBB-A880-FE41995C9F82 (APPLE_BOOT_VARIABLE_GUID)**
 
 * boot-args: -v debug=0x100 keepsyms=1 , etc (Boot flags)
-* csr-active-config: <00000000> **(Settings for SIP, recommended to manully change this within Recovery partition with csrutil).**
+* csr-active-config: <00000000> **(Settings for SIP, recommended to manully change this within Recovery partition with csrutil and preferred to leave as '00000000' in the config.plist file).**
    * `00000000` - SIP completely enabled
    * `30000000` - Allow unsigned kexts and writing to protected fs locations
    * `E7030000` - SIP completely disabled
@@ -226,11 +226,11 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 # Platforminfo
 
-**Automatic**: NO (setting YES will provide default values, which in some cases may be acceptable)
+**Automatic**: NO (setting YES will provide default values from the Generic section, which in some cases may be acceptable)
 
 **Generic**:
 
-* SpoofVendor: YES (This prevents issues with having "Apple.inc" as manufacturer).
+* SpoofVendor: YES (This prevents issues with having "Apple,inc" as manufacturer).
 * SystemUUID: Can be generated with MacSerial or use previous from Clover's config.plist.
 * MLB: Can be generated with MacSerial or use previous from Clover's config.plist.
 * ROM: <> (6 character MAC address, can be entirely random but should be unique).
