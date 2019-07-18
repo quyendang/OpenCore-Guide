@@ -64,7 +64,7 @@ Here's what mine looks like:
 
 # Setting up your config.plist
 
-Keep in mind with config.plist in OpenCore, it is different from Clover’s config.plist, they cannot be mixed and matched. It is not recommended to duplicate every patch and option from your clover config. 
+While sharing the name, the config.plist in OpenCore, is very different from Clover config.plist, they cannot be mixed and matched. It is also not recommended to duplicate every patch and option from your clover config. 
 
 First let’s duplicate the `sample.plist`, rename the duplicate to `config.plist` and open in your .plist editor of choice.
 
