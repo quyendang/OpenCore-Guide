@@ -135,13 +135,8 @@ waking from hibernation
 
 # Kernel
 
-**Add**: Here's where you specify which kexts to load, patch and emulate. Also the order in which they are loaded, Lilu.kext should be first!
-Plugins for other kexts should always come after the main kext. Lilu plugins- after Lilu, VirtualSMC plugins- after VirtualSMC etc.
-
-* Users of the AMD VEGA FE 16GB model can boot without Whatevergreen.Kext and can connect to the DP 3 port without getting blackscreen.
-
-
-
+**Add**: Here we can specify kexts to inject from our EFI into the kernel kextcache. 
+Order of kexts is important, they are loaded in this order. Plugins for other kexts should always come after the main kext. Lilu plugins- after Lilu, VirtualSMC plugins- after VirtualSMC etc.
 
 **Emulate**: Needed for spoofing CPU, for unsupported CPUs.
 
@@ -150,7 +145,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **Block**: Blocks kexts from loading. Sometimes needed for disabling Apple's trackpad driver for some laptops.
 
-**Patch**: Patches kexts.
+**Patch**: Kext or kernel patches can be added here. 
 
 **Quirks**:
 
