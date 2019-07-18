@@ -162,7 +162,7 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * ExternalDiskIcons: External Icons Patch, for when internal drives are treated as external drives
 * LapicKernelPanic: Disables kernel panic on AP core lapic interrupt. Often needed on HP laptops.
 * PanicNoKextDump: Allows for reading kernel panics logs when kernel panics occurs.
-* ThirdPartyTrim: trimforce would be preferred via terminal, as most 3rd party Nvme and SSD's are now supported.
+* ThirdPartyTrim: Trimforce would be preferred via terminal, as most 3rd party Nvme and SSD's are now supported.
 * XhciPortLimit: This the 15 port limit patch, use only while you create a usb map (ssdt-uiac.aml) or injector kext. Its use is NOT recomended long term.
 
 ![Kernel](https://i.imgur.com/vQqn5eo.png)
@@ -180,19 +180,19 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 * ConsoleBehaviousUI: Set to Text for most systems.
 
 ** You won't be able to boot with Open Core Bootloader If you do not set **YES** at UsePicker.
-** If you want to make macOS the default boot disk, set 'System Preferences > Startup Disk > (macOS boot disk)' as the default boot disk.
+** If you want to make macOS the default boot disk, set 'System Preferences > Startup Disk > (Your preferred OS disk)' as the default boot disk.
 
 **Debug**:
 * DisableWatchDog: (May need to be set to yes if macOS is stalling while logging to file is enabled).
-* Target: Logging level. 67 enables full logging to screen and file. (find log file on root of EFI partition).
-0 fully disables boot log.
+* Target: Logging level. 75 enables full logging to screen and file. (find log file on root of EFI partition).
+0 fully disables boot log. (Debug Release of OpenCore maybe required for BugTracker with -keepsyms as boot-arg)
 
 **Security**:
 * RequireSignature: See detailed explanation in configuration.pdf
 * RequireVault: For now choose NO.
 * ScanPolicy: Allows customization of disk and file system types which are scanned (and shown) by opencore at boot time.
 
-**Tools**: Used for running boot time tools like clearing NVRAM, or memtest86. Enable if required.
+**Tools**: Used for running boot time tools like clearing NVRAM, EFIShell or memtest86. Enable if required.
 
 ![Misc](https://i.imgur.com/tpr1OcL.png)
 
@@ -216,11 +216,11 @@ Plugins for other kexts should always come after the main kext. Lilu plugins- af
 
 **Block**: Forcibly rewrites NVRAM variables, not needed for us as `sudo nvram` is prefered but useful for those edge cases.
 
-**LegacyEnable:** Allows for NVRAM to be stored on nvram.plist for systems without working NVRAM.
+**LegacyEnable:** Allows for NVRAM to be stored on nvram.plist for systems without working NVRAM. (Example Z390)
 
-**LegacySchema:** Used for assigning nvram variable on such systems. 
+**LegacySchema:** Used for assigning nvram variable on such systems. (This is written to the NVRAM.plist)
 
-[Emulated NVRAM Guide](https://macprodude.github.io/Emulated-NVRAM/)
+[For futher information see the Emulated NVRAM Guide](https://macprodude.github.io/Emulated-NVRAM/)
 
 ![NVRAM](https://i.imgur.com/aQp4Ya2.png)
 
@@ -260,7 +260,7 @@ Fill all these fields to match your clover smbios
 
 **ConnectDrivers**: YES
 
-**Drivers**: Add your .efi drivers here.
+**Drivers**: Add your .efi drivers here. (HFSPlus, AptoMemoryFix, APFSLoader, etc)
 
 **Protocols**:
 
@@ -298,4 +298,4 @@ When you are happy opencore boots your system correctly, simply mount your Clove
 * [khronokernel](https://github.com/khronokernel) for the original guide. 
 * [Pavo-IM](https://github.com/Pavo-IM) for persistant corrections. :D
 * [ZISQO](https://github.com/zisqo) to translate this guide for korean language.
-* [MacProDude](https://github.com/MacProDude) for Images
+* [MacProDude](https://github.com/MacProDude) for Images and Corrections.
