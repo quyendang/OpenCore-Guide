@@ -106,12 +106,12 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 
 **Quirks**: Certain ACPI fixes. Avoid unless necessary.
 
-* **FadtEnableReset:** NO (Enable reboot and shutdown on legacy hardware, not recommended unless needed)
-* **NormalizeHeaders:** Cleanup ACPI header fields, irrelevant in 10.14
-* **RebaseRegions:** Attempt to heuristically relocate ACPI memory regions
+* **FadtEnableReset:** NO (Enable reboot and shutdown on legacy hardware, not recommended unless needed).
+* **NormalizeHeaders:** Cleanup ACPI header fields, irrelevant in 10.14.
+* **RebaseRegions:** Attempt to heuristically relocate ACPI memory regions.
 * **ResetHwSig:** Needed for hardware that fail to maintain hardware signature across the reboots and cause issues with
-waking from hibernation
-* **ResetLogoStatus:** Workaround for systems running BGRT tables
+waking from hibernation.
+* **ResetLogoStatus:** Workaround for systems running BGRT tables.
 
 ![ACPI](https://i.imgur.com/WSa88oU.png)
 
@@ -180,10 +180,10 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 **Debug**:
 * **DisableWatchDog:** (May need to be set to yes if macOS is stalling while logging to file is enabled).
 * **Target:** Logging level. 75 enables full logging to screen and file. (find log file on root of EFI partition).
-0 fully disables boot log. (Debug Release of OpenCore maybe required for BugTracker with -keepsyms as boot-arg)
+0 fully disables boot log. (Debug Release of OpenCore maybe required for BugTracker with -keepsyms as boot-arg).
 
 **Security**:
-* **RequireSignature:** See detailed explanation in configuration.pdf
+* **RequireSignature:** See detailed explanation in configuration.pdf.
 * **RequireVault:** For now choose NO.
 * **ScanPolicy:** Allows customization of disk and file system types which are scanned (and shown) by opencore at boot time.
 
@@ -211,9 +211,9 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 
 **Block**: Forcibly rewrites NVRAM variables, not needed for us as `sudo nvram` is prefered but useful for those edge cases.
 
-**LegacyEnable:** Allows for NVRAM to be stored on nvram.plist for systems without working NVRAM. (Example Z390)
+**LegacyEnable:** Allows for NVRAM to be stored on nvram.plist for systems without working NVRAM. (Example Z390).
 
-**LegacySchema:** Used for assigning nvram variable on such systems. (This is written to the NVRAM.plist)
+**LegacySchema:** Used for assigning nvram variable on such systems. (This is written to the NVRAM.plist).
 
 [For futher information see the Emulated NVRAM Guide](https://macprodude.github.io/Emulated-NVRAM/)
 
