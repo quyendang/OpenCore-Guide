@@ -50,7 +50,7 @@ By default, the EFI partition will be empty.
 
 ![Empty EFI partition](https://i.imgur.com/4iLK9Gd.png)
 
-# Base folder structure
+# EFI folder structure
 
 To setup OpenCore’s folder structure, you’ll want to grab those files from OpenCorePkg and construct your EFI to look like the one below:
 
