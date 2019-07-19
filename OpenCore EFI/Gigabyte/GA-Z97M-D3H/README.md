@@ -1,4 +1,4 @@
-#  GA-Z97
+#  GA-Z97M-D3H
 
 IGPU HD4600
 
