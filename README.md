@@ -56,7 +56,7 @@ To setup OpenCore’s folder structure, copy the files from OpenCorePkg so your 
 
 ![base EFI folder](https://i.imgur.com/4ZE7jYj.png)
 
-Place necessary .efi drivers from AppleSupportPkg and AptioFixPkg into the *drivers* folder and kexts/ACPI into their respective folders.
+Place necessary .efi drivers from AppleSupportPkg and AptioFixPkg into the *drivers* folder, then kexts/ACPI into their respective folders.
 
 Here's what mine looks like:
 
