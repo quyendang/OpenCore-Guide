@@ -42,7 +42,7 @@ Creating the USB is simple, format a USB stick (any size will suffice) as MacOS 
 
 ![Formatting the USB](https://i.imgur.com/TAyeeGd.png)
 
-Next we'll want to mount the EFI partition on the USB with either diskutil terminal command or Clover Configurator.
+Next we'll mount the EFI partition on the USB with either diskutil terminal command or Clover Configurator.
 
 ![mountEFI](https://i.imgur.com/yCWBGoJ.png)
 
