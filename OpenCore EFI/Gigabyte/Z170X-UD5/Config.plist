@@ -5,24 +5,7 @@
 	<key>ACPI</key>
 	<dict>
 		<key>Add</key>
-		<array>
-			<dict>
-				<key>Comment</key>
-				<string>XCPM</string>
-				<key>Enabled</key>
-				<false/>
-				<key>Path</key>
-				<string>SSDT-Z170-PLUG.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>USBX</string>
-				<key>Enabled</key>
-				<false/>
-				<key>Path</key>
-				<string>SSDT-Z170-USBX.aml</string>
-			</dict>
-		</array>
+		<array/>
 		<key>Block</key>
 		<array/>
 		<key>Patch</key>
@@ -48,9 +31,7 @@
 			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
 				<key>layout-id</key>
-				<data>
-				BwAAAA==
-				</data>
+				<data>BwAAAA==</data>
 			</dict>
 		</dict>
 		<key>Block</key>
@@ -145,14 +126,7 @@
 			</dict>
 		</array>
 		<key>Block</key>
-		<array>
-			<dict>
-				<key>Enabled</key>
-				<false/>
-				<key>Identifier</key>
-				<string>com.apple.driver.AppleTyMCEDriver</string>
-			</dict>
-		</array>
+		<array/>
 		<key>Patch</key>
 		<array/>
 		<key>Quirks</key>
@@ -232,22 +206,16 @@
 			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
 			<dict>
 				<key>UIScale</key>
-				<data>
-				AQ==
-				</data>
+				<data>AQ==</data>
 			</dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
 				<string>darkwake=0 slide=0 dart=0</string>
 				<key>csr-active-config</key>
-				<data>
-				BnAAAA==
-				</data>
+				<data>BnAAAA==</data>
 				<key>prev-lang:kbd</key>
-				<data>
-				ZW5fR0I6MjUw
-				</data>
+				<data>ZW5fR0I6MjUw</data>
 			</dict>
 		</dict>
 		<key>Block</key>
@@ -262,15 +230,13 @@
 	<key>PlatformInfo</key>
 	<dict>
 		<key>Automatic</key>
-		<false/>
+		<true/>
 		<key>Generic</key>
 		<dict>
 			<key>MLB</key>
 			<string></string>
 			<key>ROM</key>
-			<data>
-			SLB5eqWM
-			</data>
+			<data></data>
 			<key>SpoofVendor</key>
 			<false/>
 			<key>SystemProductName</key>
@@ -296,7 +262,6 @@
 		<key>Drivers</key>
 		<array>
 			<string>ApfsDriverLoader.efi</string>
-			<string>AptioInputFix.efi</string>
 			<string>AptioMemoryFix.efi</string>
 			<string>HFSPlus.efi</string>
 			<string>VirtualSmc.efi</string>
