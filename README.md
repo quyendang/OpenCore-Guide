@@ -277,7 +277,7 @@ Fill all these fields to match your clover smbios.
 ![UEFI](https://i.imgur.com/tWJllin.png)
 
 
-# And now you are ready to test boot!
+# Time to boot with OpenCore!
 
 ![AboutThisMac](https://i.imgur.com/BjQwhPC.png)
 
