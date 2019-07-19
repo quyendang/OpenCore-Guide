@@ -42,7 +42,7 @@ Creating the USB is simple, format a USB stick (any size will suffice) as MacOS 
 
 ![Formatting the USB](https://i.imgur.com/TAyeeGd.png)
 
-Next we'll mount the EFI partition on the USB with either diskutil terminal command or Clover Configurator.
+Next, mount the EFI partition on the USB with either diskutil terminal command or Clover Configurator.
 
 ![mountEFI](https://i.imgur.com/yCWBGoJ.png)
 
@@ -66,7 +66,7 @@ Here's what mine looks like:
 
 While sharing the name, the config.plist in OpenCore, is very different from Clover config.plist, they cannot be mixed and matched. It is also not recommended to duplicate every patch and option from your clover config. 
 
-First let’s duplicate the `sample.plist`, rename the duplicate to `config.plist` and open in your .plist editor of choice.
+First, duplicate the `sample.plist`, rename it to `config.plist` and open in your .plist editor of choice.
 
 ![Base Config.plist](https://i.imgur.com/oDGVALF.png)
 
@@ -88,7 +88,7 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 
 **Block**: Certain systems benefit from dropping some acpi tables, most modern desktops however require nothing in this section.
 
-**Patch**: In opencore we should be keeping ACPI device renames to a minimum as they are often harmful and unnecessary. If your system absolutely needs something, you should add it in this section. Refer to configuration.pdf.
+**Patch**: In OpenCore we should be keeping ACPI device renames to a minimum as they are often harmful and unnecessary. If your system absolutely needs something, you should add it in this section. Refer to configuration.pdf.
 
 * For example, common device renames are handled now by WhateverGreen on-the-fly and in a safer way:
 - GFX0 to IGPU
@@ -165,7 +165,7 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 # Misc
 
 **Boot**: Settings for boot screen.
-* **Timeout:** This sets how long OpenCore will wait until it automatically boots from the default selection
+* **Timeout:** This sets how long OpenCore will wait until it automatically boots from the default selection.
 * **ShowPicker:** If you need to see the picker screen, you better choose YES.
 * **UsePicker:** Want to boot with opencore? must choose yes.
 * **Target:** Setting for logging type (by default logging output is hidden).
@@ -221,7 +221,7 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 
 # Platforminfo
 
-**Automatic**: NO (setting YES will provide default values from the Generic section, which in some cases may be acceptable)
+**Automatic**: NO (setting YES will provide default values from the Generic section, which in some cases may be acceptable).
 
 **Generic**:
 
@@ -233,13 +233,13 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 * **SystemSerialNumber:** Can be generated with MacSerial or use previous from Clover's config.plist.
 
 **DataHub**:
-Fill all these fields to match your clover smbios
+Fill all these fields to match your clover smbios.
 
 **PlatformNVRAM**:
-Fill all these fields to match your clover smbios
+Fill all these fields to match your clover smbios.
 
 **SMBIOS**:
-Fill all these fields to match your clover smbios
+Fill all these fields to match your clover smbios.
 
 **UpdateDataHub**: YES (Update Data Hub fields)
 
@@ -259,10 +259,10 @@ Fill all these fields to match your clover smbios
 
 **Protocols**:
 
-* **AppleBootPolicy:** (Ensures APFS compatibility on VMs or legacy Macs)
-* **ConsoleControl:** Needed on most APTIO firmwares otherwise you may see text output during booting instead of Apple logo
-* **DataHub:** (Reinstalls Data Hub)
-* **DeviceProperties:** (Ensures full compatibility on VMs or legacy Macs)
+* **AppleBootPolicy:** (Ensures APFS compatibility on VMs or legacy Macs).
+* **ConsoleControl:** Needed on most APTIO firmwares otherwise you may see text output during booting instead of Apple logo.
+* **DataHub:** (Reinstalls Data Hub).
+* **DeviceProperties:** (Ensures full compatibility on VMs or legacy Macs).
 
 **Quirks**:
 
