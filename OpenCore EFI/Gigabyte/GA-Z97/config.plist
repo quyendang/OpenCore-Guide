@@ -417,7 +417,7 @@
 			<string></string>
 		</dict>
 		<key>Automatic</key>
-		<true/>
+		<false/>
 		<key>UpdateDataHub</key>
 		<true/>
 		<key>UpdateNVRAM</key>
