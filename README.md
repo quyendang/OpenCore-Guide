@@ -62,7 +62,7 @@ Here's what mine looks like:
 
 ![Populated EFI folder](https://i.imgur.com/rrJ0Nc4.png)
 
-# Setting up your config.plist
+# Setting up the config.plist
 
 While sharing the name, the config.plist in OpenCore, is very different from Clover config.plist, they cannot be mixed and matched. It is also not recommended to duplicate every patch and option from your clover config. 
 
