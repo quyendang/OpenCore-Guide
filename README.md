@@ -1,4 +1,4 @@
-![logo](https://imgur.com/YEZO0rg.png)
+![logo](https://i.imgur.com/vMJLVLD.png)
 
 # What is OpenCore?
 
