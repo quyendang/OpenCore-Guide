@@ -1,6 +1,8 @@
 ![logo](https://i.imgur.com/vMJLVLD.png)
 
-# What is OpenCore?
+# What is OpenCore? 
+
+**(Recommended to Use 0.0.3 Release) Version 0.0.4 is BETA ONLY, USE AT OWN RISK!**
 
 OpenCore is an alternative bootloader to CloverEFI or Chameleon. It is not only for Hackintosh and can also be used on real macs for purposes that require an emulated EFI. It also aims to have the ability to boot Windows and Linux without the need for using different acpi tables. It has a clean codebase and aims to stay closer to how a real mac bootloader functions. Kext injection has been greatly improved. While already functioning well, OpenCore should be considered in alpha stage at this time and is intended to be used by experienced hackintosh users, developers, or users who are happy to recover a system which fails to boot or becomes broken in some way.
 
