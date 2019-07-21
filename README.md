@@ -275,7 +275,7 @@ Fill all these fields to match your clover smbios.
 * **SanitiseClearScreen:** (Fixes High resolutions displays that display OpenCore in 1024x768) Also necessary on select AMD GPUs on Z370.
 * **AvoidHighAlloc:** (This is a workaround for select board firmwares, namely GA-Z77P-D3 (rev. 1.1), failing
 to properly access higher memory in UEFI Boot Services. Not recommended unless required
-for booting. May cause recovery boot failures on unaffected boards.))
+for booting. May cause recovery boot failures on unaffected boards.)
 
 ![UEFI](https://i.imgur.com/tWJllin.png)
 
