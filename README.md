@@ -184,7 +184,7 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 * **Target:** Logging level. 75 enables full logging to screen and file. 
 
 # Debugging Notes
-* **(File logging is saved as a ***opencore-YYYY-MM-DD-HHMMSS.txt*** or .log file on root of EFI partition). (DEBUG or NOOPT Version of OpenCore maybe required for more detailed log output, see Configuration.pdf for further information under troubleshooting)  (Also Boot-arg -keepsyms must be added for Verbose Booting ) Further information will be added to this guide soon.** 
+* **(File logging is saved as a ***opencore-YYYY-MM-DD-HHMMSS.txt*** or .log file on root of EFI partition). (DEBUG or NOOPT Version of OpenCore maybe required for more detailed log output, see Configuration.pdf for further information under troubleshooting)  (Also Boot-arg -keepsyms=1 must be added for Kernel Panic Issues under verbose booting) Further information will be added to this guide soon.** 
 
 **Security**:
 * **RequireSignature:** See detailed explanation in configuration.pdf.
