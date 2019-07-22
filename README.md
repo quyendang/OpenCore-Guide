@@ -32,7 +32,7 @@ Requirements:
 * Xcode (or other plist editor) to edit .plist files.
 * USB drive formatted as MacOS Journaled with GUID partition map. This is to test opencore without overwriting your working Clover.
 * Knowledge of how a hackintosh works and what files yours requires.
-* A previously setup and functioning hackintosh is assumed. **Which you are happy to potentially break**
+* A previously setup and functioning hackintosh is assumed **Which you are happy to potentially break**.
 * Time and patience. Without these, you are wasting your effort.
 * Sign out of all apple services until you are **sure** you have MLB and ROM sections of smbios set to match your previous Clover set up.  Not doing so could cause said services to cease to function, or **worst case** block your machine.
 * [InsanelyMac-Discord](https://discord.gg/EdmdKRW) If you need any extra help join our discord.
