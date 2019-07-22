@@ -181,7 +181,7 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 
 **Debug**:
 * **DisableWatchDog:** (May need to be set to yes if macOS is stalling while logging to file is enabled).
-* **Target:** Logging level. 75 enables full logging to screen and file. (find log file on root of EFI partition).
+* **Target:** Logging level. 75 enables full logging to screen and file. (find opencore-YYYY-MM-DD-HHMMSS.txt or .log file on root of EFI partition). (DEBUG or NOOPT Version of OpenCore maybe required for more detailed log output, see Configuration.pdf for further information under troubleshooting)
 0 fully disables boot log. (Debug Release of OpenCore maybe required for BugTracker with -keepsyms as boot-arg).
 
 **Security**:
@@ -275,7 +275,7 @@ Fill all these fields to match your clover smbios.
 * **ReleaseUsbOwnership:** (Releases USB controller from firmware driver).
 * **RequestBootVarRouting:** (Recommended to be enabled on all systems for correct update installation, Startup Disk control panel functioning, etc.
 * **SanitiseClearScreen:** (Fixes High resolutions displays that display OpenCore in 1024x768) Also necessary on select AMD GPUs on Z370.
-* **AvoidHighAlloc:** (This is a workaround for select board firmwares, namely GA-Z77P-D3 (rev. 1.1), failing
+* **AvoidHighAlloc:** (This is a workaround for select board firmwares, namely GA-Z77P-D3 (rev. 1.1), failing, Also may help to boot online recovery images (*.DMG Files)
 to properly access higher memory in UEFI Boot Services. Not recommended unless required
 for booting. May cause recovery boot failures on unaffected boards.) **Only for 0.0.4 Config.plist**
 
