@@ -298,6 +298,6 @@ When you are satisfied opencore boots your system correctly, simply mount your C
 * [vit9696](https://github.com/vit9696) for OpenCore.
 * [khronokernel](https://github.com/khronokernel) for the original guide. 
 * [Pavo-IM](https://github.com/Pavo-IM) for persistant corrections. :D
-* [ZISQO](https://github.com/zisqo) to translate this guide for korean language.
+* [ZISQO](https://github.com/zisqo) to translate this guide for korean language and update gigabyte and asus data.
 * [MacProDude](https://github.com/MacProDude) for images and corrections.
 * [wegface](https://github.com/wegface) general re-write and corrections. 
