@@ -17,6 +17,7 @@ This guide is intended to complement the excellent opencore "configuration.pdf" 
 # Current known issues
 * Z390 based systems require workarounds to non working NVRAM. [Emulated-NVRAM](https://macprodude.github.io/Emulated-NVRAM/)
 * Refer to opencore bugtracker for current known bugs [here](https://github.com/acidanthera/bugtracker/issues) 
+
 **If reporting issues, first study the documentation, then other current issues, and check the issue you are reporting is actually a bug instead of mis-configuration or user error**.
 
 # Getting Started
