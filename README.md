@@ -183,7 +183,7 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 
 **Debug**:
 * **DisableWatchDog:** (May need to be set to yes if macOS is stalling while logging to file is enabled).
-* **Target:** Logging level. 75 enables full logging to screen and file. 
+* **Target:** Logging level. 75 enables full logging to screen and file. 0 disables all logging. 
 
 * **(File logging is saved as a ***opencore-YYYY-MM-DD-HHMMSS.txt*** or .log file on root of EFI partition). (DEBUG or NOOPT Version of OpenCore maybe required for more detailed log output, see Configuration.pdf for further information under troubleshooting).**
 * Boot-arg **keepsyms=1** is recommended to make kernel panics more verbose.
