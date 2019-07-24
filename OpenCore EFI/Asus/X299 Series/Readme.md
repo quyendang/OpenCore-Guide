@@ -27,7 +27,7 @@ Drivers Used:
 - VirtualSMC
 - HfsPlus
 
-* Notes:
+**Notes:**
 - PC00 to PCI0 : Since the PC00 device has many PCI devices, recommend using Patch methods than rename using SSDT.
 - LPC0 to LPCB : Same as changing method in PC00 to PCI0
 - CPxx to PRxx : No need to rename CPU name. (does not affect sleep and wake up)
