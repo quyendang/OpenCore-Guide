@@ -101,14 +101,7 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 
 * Do NOT rename EC0 to EC as this can cause an incompatible kext (AppleACPIEC) to load and cause strange issues at any time or a non bootable system.
 
- * For X299 systems only:
-- PC00 to PCI0 : Since the PC00 device has many PCI devices, recommend using Patch methods than rename using SSDT.
-- LPC0 to LPCB : Same as changing method in PC00 to PCI0
-- CPxx to PRxx : No need to rename CPU name. (does not affect sleep and wake up)
-- EC0 to EC : No need to rename. To refer to this document 
-[SSDT-EC-USBX](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/AcpiSamples/SSDT-EC-USBX.dsl)
-
-**Quirks**: Certain ACPI fixes. Avoid unless necessary.
+ **Quirks**: Certain ACPI fixes. Avoid unless necessary.
 
 * **FadtEnableReset:** NO (Enable reboot and shutdown on legacy hardware, not recommended unless needed).
 * **NormalizeHeaders:** Cleanup ACPI header fields, irrelevant in 10.14.
