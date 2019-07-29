@@ -126,6 +126,8 @@ waking from hibernation.
 
 * Injects Audio device layout id, insert required value from AppleALC documentation [here](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs).
 
+* [Hiding Unsupported Graphics Cards](https://github.com/MacProDude/Spoof-GPU)
+
 **Block**: Removes device properties from map. Normally not required.
 
 ![DeviceProperties](https://i.imgur.com/TEKKxPf.png)
