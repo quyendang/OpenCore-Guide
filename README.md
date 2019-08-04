@@ -38,6 +38,7 @@ Requirements:
 * Time and patience. Without these, you are wasting your effort.
 * Sign out of all apple services until you are **sure** you have MLB and ROM sections of smbios set to match your previous Clover set up.  Not doing so could cause said services to cease to function, or **worst case** block your machine.
 * [InsanelyMac-Discord](https://discord.gg/EdmdKRW) If you need any extra help join our discord.
+* [Pavo's OpenCore Builder](https://github.com/insanelymacdiscord/OCBuilder/releases) Creates a Basic EFI Structure with Basic Kexts which are needed to Boot **XCODE App is required**
 
 
 # Creating the USB
