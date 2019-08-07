@@ -123,11 +123,13 @@ originally implemented as a part of AptioMemoryFix.efi, which is no longer maint
 
 **AvoidRuntimeDefrag**: This option fixes UEFI runtime services (date, time, NVRAM, power control, etc.), Most but Apple and VMware firmwares need this quirk.
  maybe required for Z390 or other Boards with NVRAM Issues.
+ 
 **DisableVariableWrite** : This is a security option allowing one to restrict NVRAM access in macOS. This quirk requires ```OC_FIRMWARE_RUNTIME```
 protocol implemented in ```FwRuntimeServices.efi.``` can also be used as an ugly workaround to buggy UEFI runtime services implementations that
 fail to write variables to NVRAM and break the rest of the operating system. Default Value is False/NO
 
 **DiscardHibernateMap** : This may be used to workaround buggy memory maps on older hardware, and is now considered rare legacy.
+
 **EnableSafeModeSlide** : The necessity of this quirk is determined by safe mode availability. If booting to safe mode fails, this option
 can be tried to be enabled. This option is relevant to the users that have issues booting to safe mode (e.g. by holding shift or using -x boot
 argument). By default safe mode forces 0 slide as if the system was launched with slide=0 boot argument. This
@@ -139,20 +141,20 @@ bit from CR0 register during their execution. This quirk requires ```OC_FIRMWARE
 ```FwRuntimeServices.efi```. Default Value is False/NO
 
 **ForceExitBootServices** : Try to ensure that ExitBootServices call succeeds even with outdated MemoryMap key argument, this quirk is determined by early boot crashes of
-* the firmware. Default Value is :False/NO
+the firmware. Default Value is :False/NO
 
 **ProtectCsmRegion** : The necessity of this quirk is determined by artifacts and sleep wake issues. As ```AvoidRuntimeDefrag```
-* resolves a similar problem, no known firmwares should need this quirk. Default Value is False/NO
+resolves a similar problem, no known firmwares should need this quirk. Default Value is False/NO
 
 **ProvideCustomSlide** : Provide custom KASLR slide on low memory, this option forces macOS to use a
-* pseudo random value among the available ones. This also ensures that ```slide=``` argument is never passed to the
-* operating system for security reasons. Default Value is False/NO
+pseudo random value among the available ones. This also ensures that ```slide=``` argument is never passed to the
+operating system for security reasons. Default Value is False/NO
 
 **SetupVirtualMap** : The necessity of this quirk is determined by early boot failures, workarounds the problem by performing early boot identity mapping of assigned virtual
-* addresses to physical memory. Default Value is False/NO
+ addresses to physical memory. Default Value is False/NO
 
 **ShrinkMemoryMap** : Select firmwares have very large memory maps, which do not fit Apple kernel, permitting up to 64 slots for
-* runtime memory. This quirk attempts to unify contiguous slots of similar types to prevent boot failures. Default Value is False/NO
+runtime memory. This quirk attempts to unify contiguous slots of similar types to prevent boot failures. Default Value is False/NO
 
 
 # DeviceProperties
