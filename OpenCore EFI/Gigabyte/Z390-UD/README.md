@@ -1,8 +1,8 @@
 # GA-Z390-UD
 
-> Used a RX570 and disabled the Intel HD 630
-
 LogoutHook enabled for saving my nvram.plist
+
+**OpenCore 0.4 (build e611445)**
 
 SMBIOS Used:
 - iMacPro1,1
@@ -19,6 +19,5 @@ Kext Used:
 
 Drivers Used:
 - ApfsDriverLoader
-- VariableRuntimeDxe (for the reboot KP's)
-- AptioMemoryFix
+- FwRuntimeServices.efi
 - VirtualSMC
