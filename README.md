@@ -338,10 +338,9 @@ When you are satisfied opencore boots your system correctly, simply mount your C
 
 # Credit
 * [Apple](https://www.apple.com) for MacOS.
-* [Acidanthera](https://github.com/acidanthera) for everything they contribute to hackintosh.
+* [Acidanthera](https://github.com/acidanthera) for everything they contribute to hackintosh. :)
 * [vit9696](https://github.com/vit9696) for OpenCore.
 * [khronokernel](https://github.com/khronokernel) for the original guide. 
-* [Pavo-IM](https://github.com/Pavo-IM) for persistant corrections. :D
+* [Pavo-IM](https://github.com/Pavo-IM) for Opencore Builder
 * [ZISQO](https://github.com/zisqo) to translate this guide for korean language and update gigabyte and asus data.
 * [MacProDude](https://github.com/MacProDude) for images and corrections.
-* [wegface](https://github.com/wegface) general re-write and corrections. 
