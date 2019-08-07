@@ -122,17 +122,17 @@ currently provide various patches and environment alterations for different firm
 originally implemented as a part of AptioMemoryFix.efi, which is no longer maintained. 
 
 **AvoidRuntimeDefrag**: This option fixes UEFI runtime services (date, time, NVRAM, power control, etc.), Most but Apple and VMware firmwares need this quirk.
-* maybe required for Z390 or other Boards with NVRAM Issues.
+ maybe required for Z390 or other Boards with NVRAM Issues.
 **DisableVariableWrite** : This is a security option allowing one to restrict NVRAM access in macOS. This quirk requires ```OC_FIRMWARE_RUNTIME```
-* protocol implemented in ```FwRuntimeServices.efi.``` can also be used as an ugly workaround to buggy UEFI runtime services implementations that
-* fail to write variables to NVRAM and break the rest of the operating system. Default Value is False/NO
+protocol implemented in ```FwRuntimeServices.efi.``` can also be used as an ugly workaround to buggy UEFI runtime services implementations that
+fail to write variables to NVRAM and break the rest of the operating system. Default Value is False/NO
 
 **DiscardHibernateMap** : This may be used to workaround buggy memory maps on older hardware, and is now considered rare legacy.
 **EnableSafeModeSlide** : The necessity of this quirk is determined by safe mode availability. If booting to safe mode fails, this option
-* can be tried to be enabled. This option is relevant to the users that have issues booting to safe mode (e.g. by holding shift or using -x boot
-* argument). By default safe mode forces 0 slide as if the system was launched with slide=0 boot argument. This
-* quirk tries to patch boot.efi to lift that limitation and let some other value (from 1 to 255) be used. This quirk
-* requires ```ProvideCustomSlide``` to be enabled. Default Value is False/NO
+can be tried to be enabled. This option is relevant to the users that have issues booting to safe mode (e.g. by holding shift or using -x boot
+argument). By default safe mode forces 0 slide as if the system was launched with slide=0 boot argument. This
+quirk tries to patch boot.efi to lift that limitation and let some other value (from 1 to 255) be used. This quirk
+requires ```ProvideCustomSlide``` to be enabled. Default Value is False/NO
 
 **EnableWriteUnprotector** : This option bypasses RˆX permissions in code pages of UEFI runtime services by removing write protection (WP)
 bit from CR0 register during their execution. This quirk requires ```OC_FIRMWARE_RUNTIME``` protocol implemented in
