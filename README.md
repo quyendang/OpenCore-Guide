@@ -117,6 +117,8 @@ waking from hibernation.
 
 # Booter
 
+![Booter](https://i.imgur.com/jLhOoJo.png)
+
 * This section allows to apply different kinds of UEFI modifications on Apple bootloader (boot.efi). The modifications
 currently provide various patches and environment alterations for different firmwares. Some of these features were
 originally implemented as a part of AptioMemoryFix.efi, which is no longer maintained. 
