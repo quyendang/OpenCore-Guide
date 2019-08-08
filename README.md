@@ -158,8 +158,10 @@ operating system for security reasons. **Default Value is False/NO**
 **ShrinkMemoryMap** : Select firmwares have very large memory maps, which do not fit Apple kernel, permitting up to 64 slots for
 runtime memory. This quirk attempts to unify contiguous slots of similar types to prevent boot failures. **Default Value is False/NO**
 
-![Booter_fix_NVRAM](https://i.imgur.com/EFfgHjZ.jpg)
-```If NVRAM read/write problems occur, they can be resolved as follows```
+# Fixing Certain NVRAM Issues
+
+![Booter_fix_NVRAM](https://i.imgur.com/prf5O2J.png)
+
 
 **AvoidRuntimeDefrag** : Set to YES for Enabled NVRAM Reading.
 
