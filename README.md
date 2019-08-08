@@ -246,10 +246,10 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 **7C436110-AB2A-4BBB-A880-FE41995C9F82 (APPLE_BOOT_VARIABLE_GUID)**
 
 * **boot-args:** -v debug=0x100 keepsyms=1 , etc (Boot flags)
-* **csr-active-config:** <00000000> **(Settings for SIP, recommended to manully change this within Recovery partition with csrutil and preferred to leave as '00000000' in the config.plist file).**
+* **csr-active-config:** <00000000> **(Settings for SIP, recommended to manully change this within Booting in Recovery partition and opening terminal with csrutil to set, and to leave as '00000000' in the config.plist file).**
    * `00000000` - SIP completely enabled
    * `30000000` - Allow unsigned kexts and writing to protected fs locations
-   * `E7030000` - SIP completely disabled
+   * `67000000` - SIP completely disabled
 * **nvda_drv:**  <> (For enabling Nvidia WebDrivers, set to 31 if running a Maxwell or Pascal GPU. This is the equivalent to setting nvda_drv=1 but instead we convert it from text to hex.
 * prev-lang:kbd: <> (Needed for non-latin keyboards) If you find Russian, you didnt read the manual...
 
