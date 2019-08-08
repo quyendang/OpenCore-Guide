@@ -158,6 +158,21 @@ operating system for security reasons. **Default Value is False/NO**
 **ShrinkMemoryMap** : Select firmwares have very large memory maps, which do not fit Apple kernel, permitting up to 64 slots for
 runtime memory. This quirk attempts to unify contiguous slots of similar types to prevent boot failures. **Default Value is False/NO**
 
+# Fixing Certain NVRAM Issues
+
+![Booter_fix_NVRAM](https://i.imgur.com/Yo8AUc4.png)
+
+
+**AvoidRuntimeDefrag** : Set to YES for Enabled NVRAM Reading.
+
+**EnableWriteUnprotector** : Set to YES for Enabled NVRAM Writing.
+
+![Booter_fix_NVRAM_verified](https://i.imgur.com/prf5O2J.png)
+* NVRAM read tests should display the NVRAM information in the Hackin tool/NVRAM correctly.
+* NVRAM write testing shall ensure that the starting disk  was correctly. (Default name was must be Macintosh HD)
+* Tested on Asus X299, Z370M-Plus II, and Gigabyte Z370 AORUS Gaming 5 and 7.
+* This feature is based on an OpenCore 0.0.4 08082018 distribution and works with the FwRuntimeService.efi driver.
+
 
 # DeviceProperties
 
