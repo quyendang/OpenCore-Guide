@@ -159,9 +159,10 @@ operating system for security reasons. **Default Value is False/NO**
 runtime memory. This quirk attempts to unify contiguous slots of similar types to prevent boot failures. **Default Value is False/NO**
 
 ![Booter_fix_NVRAM](https://i.imgur.com/EFfgHjZ.jpg)
-**If NVRAM read/write problems occur, they can be resolved as follows:**
+```If NVRAM read/write problems occur, they can be resolved as follows:**```
 
 **AvoidRuntimeDefrag** : Set to YES for Enabled NVRAM Reading.
+
 **EnableWriteUnprotector** : Set to YES for Enabled NVRAM Writing.
 
 * NVRAM read tests should display the NVRAM information in the Hackin tool/NVRAM correctly.
