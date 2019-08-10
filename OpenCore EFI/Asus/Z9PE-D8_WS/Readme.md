@@ -1,5 +1,8 @@
 #  ASUS Z9PE-D8 WS
 
+OpenCore Version:
+- 0.0.4 as of 10 Aug 2019
+
 Support CPU:
 - Xeon E5-26xx v2
 
