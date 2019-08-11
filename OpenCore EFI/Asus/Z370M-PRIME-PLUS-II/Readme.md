@@ -1,23 +1,22 @@
-# GA-Z170X-UD5
+#  PRIME Z370M PLUS II
 
-IGPU UHD530
+Support CPU:
+- i5-8xxx, i7-7xxx, 9xxx CPU
 
 SMBIOS Used:
 - iMacPro1,1
 
 Kext Used:
 - Lilu
-- WahteverGreen
 - AppleALC
-- IntelMausiEthernet
+- WhateverGreen
+- IntelMausiEthernet.kext
 - VirtualSMC
-- SMCProcessor
-- SMCSuperIO
+- USBInjectAll.kext
 * For USB need create a usb map using hackintool *
 
 Drivers Used:
 - ApfsDriverLoader
-- AptioInputFix
 - AptioMemoryFix
 - HfsPlus
-- VirtualSMC
+- VirtualSmc.efi

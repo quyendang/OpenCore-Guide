@@ -49,6 +49,32 @@
 			<false/>
 		</dict>
 	</dict>
+	<key>Booter</key>
+	<dict>
+		<key>Quirks</key>
+		<dict>
+			<key>AvoidRuntimeDefrag</key>
+			<true/>
+			<key>DisableVariableWrite</key>
+			<true/>
+			<key>DiscardHibernateMap</key>
+			<false/>
+			<key>EnableSafeModeSlide</key>
+			<false/>
+			<key>EnableWriteUnprotector</key>
+			<true/>
+			<key>ForceExitBootServices</key>
+			<false/>
+			<key>ProtectCsmRegion</key>
+			<false/>
+			<key>ProvideCustomSlide</key>
+			<true/>
+			<key>SetupVirtualMap</key>
+			<true/>
+			<key>ShrinkMemoryMap</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>DeviceProperties</key>
 	<dict>
 		<key>Add</key>
@@ -60,36 +86,36 @@
 				<key>device_type</key>
 				<string>Host bridge</string>
 				<key>model</key>
-				<string>8th Gen Core Processor Host Bridge/DRAM Registers</string>
+				<string>Apple T2 Controller</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1,0x0)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
-				<string>Internal</string>
+				<string>Internal@2,0,0</string>
 				<key>device_type</key>
 				<string>PCI bridge</string>
 				<key>model</key>
-				<string>Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor PCIe Controller (x16)</string>
+				<string>Apple PCI Controller</string>
 			</dict>
-			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
+			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
-				<string>Internal@1,0,0</string>
+				<string>Internal@3,0,0</string>
 				<key>device_type</key>
 				<string>VGA compatible controller</string>
 				<key>hda-gfx</key>
 				<string>onboard-2</string>
 				<key>model</key>
-				<string>AMD RX 580</string>
+				<string>Sapphire RX Vega 64</string>
 			</dict>
-			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x1)</key>
+			<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x1)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
-				<string>Internal@1,0,1</string>
+				<string>Internal@3,0,1</string>
 				<key>device_type</key>
 				<string>Audio device</string>
 				<key>model</key>
-				<string>Ellesmere HDMI Audio [Radeon RX 470/480 / 570/580/590]</string>
+				<string>Vega 10 Sound</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x14,0x0)</key>
 			<dict>
@@ -98,7 +124,7 @@
 				<key>device_type</key>
 				<string>USB controller</string>
 				<key>model</key>
-				<string>200 Series/Z370 Chipset Family USB 3.0 xHCI Controller</string>
+				<string>Apple XHCI 3.0</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x16,0x0)</key>
 			<dict>
@@ -116,7 +142,7 @@
 				<key>device_type</key>
 				<string>SATA controller</string>
 				<key>model</key>
-				<string>200 Series PCH SATA controller [AHCI mode]</string>
+				<string>Apple SATA controller</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
 			<dict>
@@ -127,14 +153,32 @@
 				<key>model</key>
 				<string>200 Series PCH PCI Express Root Port #17</string>
 			</dict>
-			<key>PciRoot(0x0)/Pci(0x1b,0x0)/Pci(0x0,0x0)</key>
+			<key>PciRoot(0x0)/Pci(0x1b,0x2)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
-				<string>Internal@2,0,0</string>
+				<string>Internal</string>
 				<key>device_type</key>
-				<string>Non-Volatile memory controller</string>
+				<string>PCI bridge</string>
 				<key>model</key>
-				<string>Apple SSD Controller</string>
+				<string>200 Series PCH PCI Express Root Port #19</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1b,0x3)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal</string>
+				<key>device_type</key>
+				<string>PCI bridge</string>
+				<key>model</key>
+				<string>200 Series PCH PCI Express Root Port #20</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1b,0x4)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal</string>
+				<key>device_type</key>
+				<string>PCI bridge</string>
+				<key>model</key>
+				<string>200 Series PCH PCI Express Root Port #21</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1c,0x0)</key>
 			<dict>
@@ -144,6 +188,24 @@
 				<string>PCI bridge</string>
 				<key>model</key>
 				<string>200 Series PCH PCI Express Root Port #1</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1c,0x2)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal</string>
+				<key>device_type</key>
+				<string>PCI bridge</string>
+				<key>model</key>
+				<string>200 Series PCH PCI Express Root Port #3</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x1c,0x2)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@9,0,0</string>
+				<key>device_type</key>
+				<string>Ethernet controller</string>
+				<key>model</key>
+				<string>Ethernet Controller</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1c,0x3)</key>
 			<dict>
@@ -157,29 +219,20 @@
 			<key>PciRoot(0x0)/Pci(0x1c,0x3)/Pci(0x0,0x0)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
-				<string>Internal@4,0,0</string>
+				<string>Internal@10,0,0</string>
 				<key>device_type</key>
-				<string>Ethernet controller</string>
+				<string>Network controller</string>
 				<key>model</key>
-				<string>RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller</string>
+				<string>Apple Airport Bluetooth</string>
 			</dict>
-			<key>PciRoot(0x0)/Pci(0x1c,0x6)</key>
+			<key>PciRoot(0x0)/Pci(0x1c,0x4)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
 				<string>Internal</string>
 				<key>device_type</key>
 				<string>PCI bridge</string>
 				<key>model</key>
-				<string>200 Series PCH PCI Express Root Port #7</string>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1c,0x6)/Pci(0x0,0x0)</key>
-			<dict>
-				<key>AAPL,slot-name</key>
-				<string>Internal@5,0,0</string>
-				<key>device_type</key>
-				<string>Network controller</string>
-				<key>model</key>
-				<string>BCM43602 802.11ac Wireless LAN SoC</string>
+				<string>200 Series PCH PCI Express Root Port #5</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1d,0x0)</key>
 			<dict>
@@ -190,6 +243,15 @@
 				<key>model</key>
 				<string>200 Series PCH PCI Express Root Port #9</string>
 			</dict>
+			<key>PciRoot(0x0)/Pci(0x1d,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@12,0,0</string>
+				<key>device_type</key>
+				<string>Non-Volatile memory controller</string>
+				<key>model</key>
+				<string>Apple iMac Pro NVMe Controller</string>
+			</dict>
 			<key>PciRoot(0x0)/Pci(0x1f,0x0)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
@@ -197,7 +259,7 @@
 				<key>device_type</key>
 				<string>ISA bridge</string>
 				<key>model</key>
-				<string>Z370 Chipset LPC/eSPI Controller</string>
+				<string>Apple Logic 7936-C</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1f,0x2)</key>
 			<dict>
@@ -206,7 +268,7 @@
 				<key>device_type</key>
 				<string>Memory controller</string>
 				<key>model</key>
-				<string>200 Series/Z370 Chipset Family Power Management Controller</string>
+				<string>Apple Power Management Controller</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
@@ -219,7 +281,7 @@
 				<key>layout-id</key>
 				<data>BwAAAA==</data>
 				<key>model</key>
-				<string>200 Series PCH HD Audio</string>
+				<string>Apple HD Audio</string>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x1f,0x4)</key>
 			<dict>
@@ -228,7 +290,16 @@
 				<key>device_type</key>
 				<string>SMBus</string>
 				<key>model</key>
-				<string>200 Series/Z370 Chipset Family SMBus Controller</string>
+				<string>Apple SMBus</string>
+			</dict>
+			<key>PciRoot(0x0)/Pci(0x8,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal</string>
+				<key>device_type</key>
+				<string>System peripheral</string>
+				<key>model</key>
+				<string>Apple Processor Mixed Mode</string>
 			</dict>
 		</dict>
 		<key>Block</key>
@@ -257,16 +328,6 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>AGPMInjector.kext</string>
-				<key>Comment</key>
-				<string>GPU Power Management</string>
-				<key>Enabled</key>
-				<true/>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>BundlePath</key>
 				<string>WhateverGreen.kext</string>
 				<key>Comment</key>
 				<string>Graphics</string>
@@ -279,13 +340,13 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>USBPorts.kext</string>
+				<string>USBInjectAll.kext</string>
 				<key>Comment</key>
 				<string>USB Controller</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string></string>
+				<string>Contents/MacOS/USBInjectAll</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -315,13 +376,13 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>SMCProcessor.kext</string>
+				<string>RealtekRTL8111.kext</string>
 				<key>Comment</key>
-				<string>Sensors</string>
+				<string>Ethernet</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SMCProcessor</string>
+				<string>Contents/MacOS/RealtekRTL8111</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -329,7 +390,7 @@
 				<key>BundlePath</key>
 				<string>SMCSuperIO.kext</string>
 				<key>Comment</key>
-				<string>Sensors</string>
+				<string>Ethernet</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -339,13 +400,13 @@
 			</dict>
 			<dict>
 				<key>BundlePath</key>
-				<string>RealtekRTL8111.kext</string>
+				<string>SMCProcessor.kext</string>
 				<key>Comment</key>
 				<string>Ethernet</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/RealtekRTL8111</string>
+				<string>Contents/MacOS/SMCProcessor</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -359,7 +420,7 @@
 			<key>AppleCpuPmCfgLock</key>
 			<false/>
 			<key>AppleXcpmCfgLock</key>
-			<false/>
+			<true/>
 			<key>AppleXcpmExtraMsrs</key>
 			<false/>
 			<key>CustomSMBIOSGuid</key>
@@ -369,8 +430,6 @@
 			<key>ExternalDiskIcons</key>
 			<false/>
 			<key>LapicKernelPanic</key>
-			<false/>
-			<key>PanicFALSEKextDump</key>
 			<false/>
 			<key>ThirdPartyTrim</key>
 			<false/>
@@ -383,7 +442,7 @@
 		<key>Boot</key>
 		<dict>
 			<key>ConsoleBehaviourOs</key>
-			<string>Graphics</string>
+			<string>ForceGraphics</string>
 			<key>ConsoleBehaviourUi</key>
 			<string>ForceText</string>
 			<key>ConsoleMode</key>
@@ -393,22 +452,22 @@
 			<key>HideSelf</key>
 			<true/>
 			<key>Resolution</key>
-			<string>2560x1440</string>
+			<string>Max</string>
 			<key>ShowPicker</key>
-			<true/>
+			<false/>
 			<key>Timeout</key>
-			<integer>5</integer>
+			<integer>2</integer>
 			<key>UsePicker</key>
 			<true/>
 		</dict>
 		<key>Debug</key>
 		<dict>
 			<key>DisableWatchDog</key>
-			<false/>
+			<true/>
 			<key>DisplayDelay</key>
 			<integer>0</integer>
 			<key>DisplayLevel</key>
-			<integer>64</integer>
+			<integer>75</integer>
 			<key>Target</key>
 			<integer>75</integer>
 		</dict>
@@ -423,7 +482,7 @@
 			<key>RequireVault</key>
 			<false/>
 			<key>ScanPolicy</key>
-			<integer>0</integer>
+			<real>4128770</real>
 		</dict>
 	</dict>
 	<key>NVRAM</key>
@@ -432,23 +491,27 @@
 		<dict>
 			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
 			<dict>
-				<key>UIScale</key>
-				<data>Ag==</data>
+				<key>item 0</key>
+				<data>AQ==</data>
 			</dict>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string> gfxrst=1 keepsyms=1 debug=0x100 shikigva=41 shiki-id=Mac-7BA5B2D9E42DDD94</string>
-				<key>bootercfg</key>
-				<string>log=0 debug=0</string>
+				<string>dart=0 keepsyms=1 debug=0x100 slide=0</string>
 				<key>csr-active-config</key>
-				<data>AAAAAA==</data>
+				<data>BnAAAA==</data>
 				<key>prev-lang:kbd</key>
-				<string>en_GB:250</string>
+				<data>ZW5fR0I6MjUw</data>
 			</dict>
+			<key>UIScale</key>
+			<data>0w==</data>
 		</dict>
 		<key>Block</key>
 		<dict>
+			<key>4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14</key>
+			<array>
+				<string>UIScale</string>
+			</array>
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<array>
 				<string>csr-active-config</string>
@@ -459,13 +522,13 @@
 	<key>PlatformInfo</key>
 	<dict>
 		<key>Automatic</key>
-		<false/>
+		<true/>
 		<key>DataHub</key>
 		<dict>
 			<key>ARTFrequency</key>
 			<integer>0</integer>
 			<key>BoardProduct</key>
-			<string>Mac-XXXXXXXXXXXXX</string>
+			<string>Mac-63001698E7A34814</string>
 			<key>BoardRevision</key>
 			<string>1.0</string>
 			<key>DevicePathsSupported</key>
@@ -487,14 +550,14 @@
 			<key>SystemProductName</key>
 			<string>iMac19,2</string>
 			<key>SystemSerialNumber</key>
-			<string>OWNSERIAL</string>
+			<string>C02Y50A4JWDW</string>
 			<key>SystemUUID</key>
-			<string>&lt;00000000 00000000 00000000 00000000&gt;</string>
+			<string>723ECFEF-A626-4E07-8881-2D869E586E4A</string>
 		</dict>
 		<key>Generic</key>
 		<dict>
 			<key>MLB</key>
-			<string>OWNMLB</string>
+			<string></string>
 			<key>ROM</key>
 			<string>16E9D1586E4A</string>
 			<key>SpoofVendor</key>
@@ -502,20 +565,20 @@
 			<key>SystemProductName</key>
 			<string>iMac19,2</string>
 			<key>SystemSerialNumber</key>
-			<string>OWNSERIAL</string>
+			<string></string>
 			<key>SystemUUID</key>
-			<string>&lt;00000000 00000000 00000000 00000000&gt;</string>
+			<string></string>
 		</dict>
 		<key>PlatformNVRAM</key>
 		<dict>
 			<key>BID</key>
-			<string>Mac-XXXXXXXXXX</string>
+			<string>Mac-63001698E7A34814</string>
 			<key>FirmwareFeatures</key>
 			<string>0xFD8FF576</string>
 			<key>FirmwareFeaturesMask</key>
 			<string>0xFF1FFF3F</string>
 			<key>MLB</key>
-			<string>OWNMLB</string>
+			<string>C02904300QXKGQG1H</string>
 			<key>ROM</key>
 			<string>16E9D1586E4A</string>
 		</dict>
@@ -534,9 +597,9 @@
 			<key>BoardManufacturer</key>
 			<string>PowerMac</string>
 			<key>BoardProduct</key>
-			<string>Mac-XXXXXXXXXXX</string>
+			<string>Mac-63001698E7A34814</string>
 			<key>BoardSerialNumber</key>
-			<string>OWNBOARDID</string>
+			<string>C02904300QXKGQG1H</string>
 			<key>BoardType</key>
 			<integer>10</integer>
 			<key>BoardVersion</key>
@@ -546,11 +609,11 @@
 			<key>ChassisManufacturer</key>
 			<string>PowerMac</string>
 			<key>ChassisSerialNumber</key>
-			<string>OWNSERIAL</string>
+			<string>C02Y50A4JWDW</string>
 			<key>ChassisType</key>
 			<string>0x09</string>
 			<key>ChassisVersion</key>
-			<string>Mac-XXXXXXXXXX</string>
+			<string>Mac-63001698E7A34814</string>
 			<key>FirmwareFeatures</key>
 			<string>0xFD8FF576</string>
 			<key>FirmwareFeaturesMask</key>
@@ -570,11 +633,11 @@
 			<key>SystemProductName</key>
 			<string>iMac 19,2</string>
 			<key>SystemSKUNumber</key>
-			<string>Mac-XXXXXXXXXXXX</string>
+			<string>Mac-BE088AF8C5EB4FA2</string>
 			<key>SystemSerialNumber</key>
-			<string>OWNSERIAL</string>
+			<string>C02VH2BUJ1GJ</string>
 			<key>SystemUUID</key>
-			<string>&lt;00000000 00000000 00000000 00000000&gt;</string>
+			<string>0D1B7912-B1D6-47D1-829B-A6062CDBA1A7</string>
 			<key>SystemVersion</key>
 			<string>1.0</string>
 		</dict>
@@ -593,9 +656,9 @@
 		<true/>
 		<key>Drivers</key>
 		<array>
-			<string>AptioMemoryFix.efi</string>
-			<string>HFSPlus.efi</string>
+			<string>FwRuntimeServices.efi</string>
 			<string>ApfsDriverLoader.efi</string>
+			<string>HFSPlus.efi</string>
 		</array>
 		<key>Protocols</key>
 		<dict>
@@ -610,6 +673,8 @@
 		</dict>
 		<key>Quirks</key>
 		<dict>
+			<key>AvoidHighAlloc</key>
+			<false/>
 			<key>ExitBootServicesDelay</key>
 			<integer>0</integer>
 			<key>IgnoreInvalidFlexRatio</key>
@@ -624,8 +689,6 @@
 			<true/>
 			<key>SanitiseClearScreen</key>
 			<true/>
-			<key>AvoidHighAlloc</key>
-			<false/>
 		</dict>
 	</dict>
 </dict>
