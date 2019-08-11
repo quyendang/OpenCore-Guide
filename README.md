@@ -130,7 +130,9 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 
 * Do NOT rename EC0 to EC as this can cause an incompatible kext (AppleACPIEC) to load and cause strange issues at any time or a non bootable system.
 
- **Quirks**: Certain ACPI fixes. Avoid unless necessary.
+ ## Quirks: 
+ 
+ **Certain ACPI fixes. Avoid unless necessary.**
 
 * **FadtEnableReset:** NO (Enable reboot and shutdown on legacy hardware, not recommended unless needed).
 * **NormalizeHeaders:** Cleanup ACPI header fields, irrelevant in 10.14.
@@ -153,26 +155,16 @@ originally implemented as a part of AptioMemoryFix.efi, which is no longer maint
 
 **NOTES:**
 
-**-Most up-to-date UEFI firmware (check your motherboard vendor website).**
-
-**-Fast Boot and Hardware Fast Boot disabled in firmware settings if present.**
-
-**-Above 4G Decoding or similar enabled in firmware settings if present. Note, that on some motherboards (notably ASUS WS-X299-PRO) this option causes adverse effects, and must be disabled. -While no other motherboards with the same issue are known, consider this option to be first to check if you have erratic boot failures.**
-
-**-DisableIoMapper quirk enabled, or VT-d disabled in firmware settings if present, or ACPI DMAR table dropped.**
-
-**-No ‘slide‘ boot argument present in NVRAM or anywhere else. It is not necessary unless you cannot boot at all or see No slide values are usable! Use custom slide! message in the log.**
-
-**-CFG Lock (MSR 0xE2 write protection) disabled in firmware settings if present. Cconsider patching it if you have enough skills and no option is available. See VerifyMsrE2 nots for more details.**
-
-**-CSM (Compatibility Support Module) disabled in firmware settings if present. You may need to flash GOP ROM on NVIDIA 6xx/AMD 2xx or older. Use GopUpdate or AMD UEFI GOP MAKER in case you are not sure how.**
-
-
-**- EHCI/XHCI Hand-off enabled in firmware settings only if boot stalls unless USB devices are disconnected.**
-
-**- VT-x, Hyper Threading, Execute Disable Bit enabled in firmware settings if present.**
-
-**- While it may not be required, sometimes you have to disable Thunderbolt support, Intel SGX, and Intel Platform Trust in firmware settings present.**
+###-Most up-to-date UEFI firmware (check your motherboard vendor website).
+###-Fast Boot and Hardware Fast Boot disabled in firmware settings if present.
+###-Above 4G Decoding or similar enabled in firmware settings if present. Note, that on some motherboards (notably ASUS WS-X299-PRO) this option causes adverse effects, and must be disabled. -While no other motherboards with the same issue are known, consider this option to be first to check if you have erratic boot failures.
+###-DisableIoMapper quirk enabled, or VT-d disabled in firmware settings if present, or ACPI DMAR table dropped.
+###-No ‘slide‘ boot argument present in NVRAM or anywhere else. It is not necessary unless you cannot boot at all or see No slide values are usable! Use custom slide! message in the log.
+###-CFG Lock (MSR 0xE2 write protection) disabled in firmware settings if present. Cconsider patching it if you have enough skills and no option is available. See VerifyMsrE2 nots for more details.
+###-CSM (Compatibility Support Module) disabled in firmware settings if present. You may need to flash GOP ROM on NVIDIA 6xx/AMD 2xx or older. Use GopUpdate or AMD UEFI GOP MAKER in case you are not sure how.
+###-EHCI/XHCI Hand-off enabled in firmware settings only if boot stalls unless USB devices are disconnected.
+###-VT-x, Hyper Threading, Execute Disable Bit enabled in firmware settings if present.
+###-While it may not be required, sometimes you have to disable Thunderbolt support, Intel SGX, and Intel Platform Trust in firmware settings present.
 
 
 ## Booter-Quirks
