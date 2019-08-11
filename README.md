@@ -113,7 +113,7 @@ The config contains a number of sections:
 
 We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't you?
 
-# ACPI
+# 1. ACPI 
 
 **Add:** Here you add your SSDTs or custom DSDT. (SSDT-EC.aml for example)
 
@@ -141,7 +141,7 @@ waking from hibernation.
 
 &#x200B;
 
-# Booter
+# 2. Booter
 
 
 * This section allows to apply different kinds of UEFI modifications on Apple bootloader (boot.efi). The modifications
@@ -166,11 +166,14 @@ originally implemented as a part of AptioMemoryFix.efi, which is no longer maint
 **-CSM (Compatibility Support Module) disabled in firmware settings if present. You may need to flash GOP ROM on NVIDIA 6xx/AMD 2xx or older. Use GopUpdate or AMD UEFI GOP MAKER in case you are not sure how.**
 
 
-- EHCI/XHCI Hand-off enabled in firmware settings only if boot stalls unless USB devices are disconnected.
+**- EHCI/XHCI Hand-off enabled in firmware settings only if boot stalls unless USB devices are disconnected.**
 
-- VT-x, Hyper Threading, Execute Disable Bit enabled in firmware settings if present.
+**- VT-x, Hyper Threading, Execute Disable Bit enabled in firmware settings if present.**
 
-- While it may not be required, sometimes you have to disable Thunderbolt support, Intel SGX, and Intel Platform Trust in firmware settings present.
+**- While it may not be required, sometimes you have to disable Thunderbolt support, Intel SGX, and Intel Platform Trust in firmware settings present.**
+
+
+## Booter-Quirks
 
 **AvoidRuntimeDefrag**: This option fixes UEFI runtime services (date, time, NVRAM, power control, etc.), Most but Apple and VMware firmwares need this quirk.
  maybe required for Z390 or other Boards with NVRAM Issues.
@@ -221,7 +224,7 @@ runtime memory. This quirk attempts to unify contiguous slots of similar types t
 * This feature is based on an OpenCore 0.0.4 08082018 distribution and works with the FwRuntimeService.efi driver.
 
 
-# DeviceProperties
+# 4. DeviceProperties
 
 **Add**: Injects Device properties.
 
@@ -238,7 +241,7 @@ runtime memory. This quirk attempts to unify contiguous slots of similar types t
 **Block**: Removes device properties from map. Normally not required.
 
 
-# Kernel
+# 5. Kernel
 
 **Add**: Here we can specify kexts to inject from our EFI into the kernel kextcache. 
 Order of kexts is important, they are loaded in this order. Plugins for other kexts should always come after the main kext. Lilu should be first, then Lilu plugins like WhateverGreen and VirtualSMC. 
@@ -266,7 +269,7 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 * **XhciPortLimit:** This the 15 port limit patch, use only while you create a usb map (ssdt-uiac.aml) or injector kext. Its use is NOT recomended long term.
 
 
-# Misc
+# 6. Misc
 
 **Boot**: Settings for boot screen.
 * **Timeout:** This sets how long OpenCore will wait until it automatically boots from the default selection.
@@ -299,7 +302,7 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 
 
 
-# NVRAM
+# 7. NVRAM
 
 **Add:**
 
@@ -327,7 +330,7 @@ leaving the value as ```00000000``` in the config.plist file).**
 [For futher information see the Emulated NVRAM Guide](https://macprodude.github.io/Emulated-NVRAM/)
 
 
-# Platforminfo
+# 8. Platforminfo
 
 **Automatic**: NO (setting YES will provide default values from the Generic section, which in some cases may be acceptable).
 
@@ -340,14 +343,11 @@ leaving the value as ```00000000``` in the config.plist file).**
 * **SystemProductName:** Can be generated with MacSerial or use previous from Clover's config.plist.
 * **SystemSerialNumber:** Can be generated with MacSerial or use previous from Clover's config.plist.
 
-**DataHub**:
-Fill all these fields to match your clover smbios.
+**DataHub**: Fill all these fields to match your clover smbios.
 
-**PlatformNVRAM**:
-Fill all these fields to match your clover smbios.
+**PlatformNVRAM**: Fill all these fields to match your clover smbios.
 
-**SMBIOS**:
-Fill all these fields to match your clover smbios.
+**SMBIOS**: Fill all these fields to match your clover smbios.
 
 **UpdateDataHub**: YES (Update Data Hub fields)
 
@@ -358,7 +358,7 @@ Fill all these fields to match your clover smbios.
 **UpdateSMBIOSMode**: Create (Replace the tables with newly allocated EfiReservedMemoryType)
 
 
-# UEFI
+# 9. UEFI
 
 **ConnectDrivers**: YES
 
