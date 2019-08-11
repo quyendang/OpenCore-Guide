@@ -9,17 +9,19 @@
 **This guide may not always be able to keep up with every change to OpenCore,** 
 **(currently OpenCore is in active development,and therefore a moving target)** 
 **please keep that in mind when compiling the latest version of OpenCore.**
-**To be safe, use release versions of OpenCore rather than the latest commits.** (0.0.3 Current Release))
+**To be safe, use release versions of OpenCore rather than the latest commits.** (0.5.0 Current Release)
 
 This guide is intended to complement the excellent opencore "configuration.pdf" rather than be used instead of it. If you did not already do so, please read it now: 
 [Full manual](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Configuration.pdf)
 
 
 # Current known issues
-* Z390 based systems require workarounds to non working NVRAM. [Emulated-NVRAM](https://macprodude.github.io/Emulated-NVRAM/)
 * Refer to opencore bugtracker for current known bugs [here](https://github.com/acidanthera/bugtracker/issues) 
 
-**If reporting issues, first study the documentation, then other current issues, and check the issue you are reporting is actually a bug instead of mis-configuration or user error**.
+## If reporting issues, first study the documentation, then other current issues, and check the issue you are reporting is actually a bug instead of mis-configuration or user error.
+
+
+
 
 # Getting Started
 
@@ -27,7 +29,6 @@ Requirements:
 
 * [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases) (Advanced users can build the latest from source code, less advanced users should stick to the builds on the release page).
 * [AppleSupportPkg](https://github.com/acidanthera/AppleSupportPkg/releases)
-* [AptioFixPkg](https://github.com/acidanthera/AptioFixPkg/releases)
 * [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases)
 * [Lilu](https://github.com/acidanthera/Lilu/releases)
 * [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases) *FakeSMC is (in this guide) not recommended.*
@@ -59,7 +60,7 @@ By default, the EFI partition will be empty.
 
 To setup OpenCore’s folder structure, copy the files from OpenCorePkg so your EFI looks like the one below:
 
-```
+< ```
 
    |--EFI
    |   |--BOOT
@@ -90,7 +91,7 @@ To setup OpenCore’s folder structure, copy the files from OpenCorePkg so your 
    |   |   |   |--Shell.efi
    |   |   |   |--VerifyMsrE2.efi
 
-```
+< ```
 
 Place necessary .efi drivers from AppleSupportPkg and AptioFixPkg into the *drivers* folder, then kexts/ACPI into their respective folders.
 
