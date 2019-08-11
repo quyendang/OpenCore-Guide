@@ -60,34 +60,34 @@ To setup OpenCore’s folder structure, copy the files from OpenCorePkg so your 
 
 ```
 
-|   |--EFI
-|   |   |--BOOT
-|   |   |   |--BOOTx64.efi
-|   |   |--OC
-|   |   |   |--ACPI
-|   |   |   |--Drivers
-|   |   |   |   |--ApfsDriverLoader.efi
-|   |   |   |   |--AppleGenericInput.efi
-|   |   |   |   |--AppleUiSupport.efi
-|   |   |   |   |--FWRuntimeServices.efi
-|   |   |   |   |--UsbKbDxe.efi
-|   |   |   |   |--VBoxHfs.efi
-|   |   |   |   |--VirtualSmc.efi (Filevault Only))
-|   |   |   |--Kexts
-|   |   |   |   |--AppleALC.kext
-|   |   |   |   |--CPUFriend.kext
-|   |   |   |   |--Lilu.kext
-|   |   |   |   |--SMCBatteryManager.kext (Laptop)
-|   |   |   |   |--SMCLightSensor.kext (Laptop)
-|   |   |   |   |--SMCProcessor.kext
-|   |   |   |   |--SMCSuperIO.kext
-|   |   |   |   |--VirtualSMC.kext
-|   |   |   |   |--WhateverGreen.kext
-|   |   |   |--OpenCore.efi
-|   |   |   |--Tools
-|   |   |   |   |--CleanNvram.efi
-|   |   |   |   |--Shell.efi
-|   |   |   |   |--VerifyMsrE2.efi
+   |--EFI
+   |   |--BOOT
+   |   |   |--BOOTx64.efi
+   |   |--OC
+   |   |   |--ACPI
+   |   |   |--Drivers
+   |   |   |   |--ApfsDriverLoader.efi
+   |   |   |   |--AppleGenericInput.efi
+   |   |   |   |--AppleUiSupport.efi
+   |   |   |   |--FWRuntimeServices.efi
+   |   |   |   |--UsbKbDxe.efi
+   |   |   |   |--VBoxHfs.efi
+   |   |   |   |--VirtualSmc.efi (Filevault Only))
+   |   |   |--Kexts
+   |   |   |   |--AppleALC.kext
+   |   |   |   |--CPUFriend.kext
+   |   |   |   |--Lilu.kext
+   |   |   |   |--SMCBatteryManager.kext (Laptop)
+   |   |   |   |--SMCLightSensor.kext (Laptop)
+   |   |   |   |--SMCProcessor.kext
+   |   |   |   |--SMCSuperIO.kext
+   |   |   |   |--VirtualSMC.kext
+   |   |   |   |--WhateverGreen.kext
+   |   |   |--OpenCore.efi
+   |   |   |--Tools
+   |   |   |   |--CleanNvram.efi
+   |   |   |   |--Shell.efi
+   |   |   |   |--VerifyMsrE2.efi
 
 ```
 
