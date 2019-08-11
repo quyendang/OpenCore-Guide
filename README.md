@@ -111,40 +111,40 @@ We can delete *#WARNING -1* and  *#WARNING -2* You did heed the warning didn't y
 waking from hibernation.
 * **ResetLogoStatus:** Workaround for systems running BGRT tables.
 
-![ACPI](https://i.imgur.com/WSa88oU.png)
+
 
 &#x200B;
 
 # Booter
 
-![Booter](https://i.imgur.com/jLhOoJo.png)
 
 * This section allows to apply different kinds of UEFI modifications on Apple bootloader (boot.efi). The modifications
 currently provide various patches and environment alterations for different firmwares. Some of these features were
 originally implemented as a part of AptioMemoryFix.efi, which is no longer maintained. 
 
-```
-Notes:
-- Most up-to-date UEFI firmware (check your motherboard vendor website).
 
-- Fast Boot and Hardware Fast Boot disabled in firmware settings if present.
+**NOTES:**
 
-- Above 4G Decoding or similar enabled in firmware settings if present. Note, that on some motherboards (notably ASUS WS-X299-PRO) this option causes adverse effects, and must be disabled. While no other motherboards with the same issue are known, consider this option to be first to check if you have erratic boot failures.
+-Most up-to-date UEFI firmware (check your motherboard vendor website).**
 
-- DisableIoMapper quirk enabled, or VT-d disabled in firmware settings if present, or ACPI DMAR table dropped.
+**-Fast Boot and Hardware Fast Boot disabled in firmware settings if present.**
 
-- No ‘slide‘ boot argument present in NVRAM or anywhere else. It is not necessary unless you cannot boot at all or see No slide values are usable! Use custom slide! message in the log.
+**-Above 4G Decoding or similar enabled in firmware settings if present. Note, that on some motherboards (notably ASUS WS-X299-PRO) this option causes adverse effects, and must be disabled. -While no other motherboards with the same issue are known, consider this option to be first to check if you have erratic boot failures.**
 
-- CFG Lock (MSR 0xE2 write protection) disabled in firmware settings if present. Cconsider patching it if you have enough skills and no option is available. See VerifyMsrE2 nots for more details.
+**-DisableIoMapper quirk enabled, or VT-d disabled in firmware settings if present, or ACPI DMAR table dropped.**
 
-- CSM (Compatibility Support Module) disabled in firmware settings if present. You may need to flash GOP ROM on NVIDIA 6xx/AMD 2xx or older. Use GopUpdate or AMD UEFI GOP MAKER in case you are not sure how.
+**-No ‘slide‘ boot argument present in NVRAM or anywhere else. It is not necessary unless you cannot boot at all or see No slide values are usable! Use custom slide! message in the log.**
+
+**-CFG Lock (MSR 0xE2 write protection) disabled in firmware settings if present. Cconsider patching it if you have enough skills and no option is available. See VerifyMsrE2 nots for more details.**
+
+**-CSM (Compatibility Support Module) disabled in firmware settings if present. You may need to flash GOP ROM on NVIDIA 6xx/AMD 2xx or older. Use GopUpdate or AMD UEFI GOP MAKER in case you are not sure how.**
+
 
 - EHCI/XHCI Hand-off enabled in firmware settings only if boot stalls unless USB devices are disconnected.
 
 - VT-x, Hyper Threading, Execute Disable Bit enabled in firmware settings if present.
 
 - While it may not be required, sometimes you have to disable Thunderbolt support, Intel SGX, and Intel Platform Trust in firmware settings present.
-```
 
 **AvoidRuntimeDefrag**: This option fixes UEFI runtime services (date, time, NVRAM, power control, etc.), Most but Apple and VMware firmwares need this quirk.
  maybe required for Z390 or other Boards with NVRAM Issues.
@@ -183,14 +183,12 @@ runtime memory. This quirk attempts to unify contiguous slots of similar types t
 
 # Fixing Certain NVRAM Issues
 
-![Booter_fix_NVRAM](https://i.imgur.com/Yo8AUc4.png)
 
 
 **AvoidRuntimeDefrag** : Set to YES for Enabled NVRAM Reading.
 
 **EnableWriteUnprotector** : Set to YES for Enabled NVRAM Writing.
 
-![Booter_fix_NVRAM_verified](https://i.imgur.com/prf5O2J.png)
 * NVRAM read tests should display the NVRAM information in the Hackin tool/NVRAM correctly.
 * NVRAM write testing shall ensure that the starting disk  was correctly. (Default name was must be Macintosh HD)
 * Tested on Asus X299, Z370M-Plus II, and Gigabyte Z370 AORUS Gaming 5 and 7.
@@ -213,7 +211,6 @@ runtime memory. This quirk attempts to unify contiguous slots of similar types t
 
 **Block**: Removes device properties from map. Normally not required.
 
-![DeviceProperties](https://i.imgur.com/TEKKxPf.png)
 
 # Kernel
 
@@ -242,7 +239,6 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 * **ThirdPartyTrim:** Trimforce would be preferred via terminal, as most 3rd party Nvme and SSD's are now supported.
 * **XhciPortLimit:** This the 15 port limit patch, use only while you create a usb map (ssdt-uiac.aml) or injector kext. Its use is NOT recomended long term.
 
-![Kernel](https://i.imgur.com/vQqn5eo.png)
 
 # Misc
 
@@ -275,7 +271,7 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 
 **Tools**: Used for running boot time tools like clearing NVRAM, EFIShell or memtest86. Enable if required.
 
-![Misc](https://i.imgur.com/tpr1OcL.png)
+
 
 # NVRAM
 
@@ -304,7 +300,6 @@ leaving the value as ```00000000``` in the config.plist file).**
 
 [For futher information see the Emulated NVRAM Guide](https://macprodude.github.io/Emulated-NVRAM/)
 
-![NVRAM](https://i.imgur.com/aQp4Ya2.png)
 
 # Platforminfo
 
@@ -336,7 +331,6 @@ Fill all these fields to match your clover smbios.
 
 **UpdateSMBIOSMode**: Create (Replace the tables with newly allocated EfiReservedMemoryType)
 
-![PlatformInfo](https://i.imgur.com/icsZ1BD.png)
 
 # UEFI
 
@@ -363,7 +357,6 @@ Fill all these fields to match your clover smbios.
 * **AvoidHighAlloc:** (This is a workaround for select board firmwares, namely GA-Z77P-D3 (rev. 1.1), failing, Also may help to boot online recovery images (*.DMG Files)
 to properly access higher memory in UEFI Boot Services. Not recommended unless required) **Only for 0.0.4 Config.plist**
 
-![UEFI](https://i.imgur.com/tWJllin.png)
 
 
 # Time to boot with OpenCore!
@@ -380,6 +373,6 @@ When you are satisfied opencore boots your system correctly, simply mount your C
 * [Acidanthera](https://github.com/acidanthera) for everything they contribute to hackintosh. :)
 * [vit9696](https://github.com/vit9696) for OpenCore.
 * [khronokernel](https://github.com/khronokernel) for the original guide. 
-* [Pavo-IM](https://github.com/Pavo-IM) for Opencore Builder
+* [Pavo-IM](https://github.com/Pavo-IM) for Opencore Builder and edits
 * [ZISQO](https://github.com/zisqo) to translate this guide for korean language and update gigabyte and asus data.
-* [MacProDude](https://github.com/MacProDude) for images and corrections.
+* [MacProDude](https://github.com/MacProDude) for images and guide rewrite
