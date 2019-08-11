@@ -101,11 +101,11 @@ While sharing the name, the config.plist in OpenCore, is very different from Clo
 
 First, duplicate the `sample.plist`, rename it to `config.plist` and open in your .plist editor of choice.
 
-![Base Config.plist](https://i.imgur.com/oDGVALF.png)
 
 The config contains a number of sections:
 
 * **ACPI:** This is for loading, blocking and patching the ACPI.
+* **Booter** UEFI modifications on Apple bootloader (boot.efi).
 * **DeviceProperties:** This is where you'd inject PCI device properties or set Intel Framebuffer.
 * **Kernel:** Where we tell OpenCore what kexts to load, what order to load and which to block.
 * **Misc:** Settings for OpenCore's boot loader itself.
