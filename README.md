@@ -53,19 +53,45 @@ Next, mount the EFI partition on the USB with either diskutil terminal command o
 
 By default, the EFI partition will be empty.
 
-![Empty EFI partition](https://i.imgur.com/4iLK9Gd.png)
 
 # EFI folder structure
 
 To setup OpenCore’s folder structure, copy the files from OpenCorePkg so your EFI looks like the one below:
 
-![base EFI folder](https://i.imgur.com/4ZE7jYj.png)
+```
+
+|   |--EFI
+|   |   |--BOOT
+|   |   |   |--BOOTx64.efi
+|   |   |--OC
+|   |   |   |--ACPI
+|   |   |   |--Drivers
+|   |   |   |   |--ApfsDriverLoader.efi
+|   |   |   |   |--AppleGenericInput.efi
+|   |   |   |   |--AppleUiSupport.efi
+|   |   |   |   |--FWRuntimeServices.efi
+|   |   |   |   |--UsbKbDxe.efi
+|   |   |   |   |--VBoxHfs.efi
+|   |   |   |   |--VirtualSmc.efi (Filevault Only))
+|   |   |   |--Kexts
+|   |   |   |   |--AppleALC.kext
+|   |   |   |   |--CPUFriend.kext
+|   |   |   |   |--Lilu.kext
+|   |   |   |   |--SMCBatteryManager.kext (Laptop)
+|   |   |   |   |--SMCLightSensor.kext (Laptop)
+|   |   |   |   |--SMCProcessor.kext
+|   |   |   |   |--SMCSuperIO.kext
+|   |   |   |   |--VirtualSMC.kext
+|   |   |   |   |--WhateverGreen.kext
+|   |   |   |--OpenCore.efi
+|   |   |   |--Tools
+|   |   |   |   |--CleanNvram.efi
+|   |   |   |   |--Shell.efi
+|   |   |   |   |--VerifyMsrE2.efi
+
+```
 
 Place necessary .efi drivers from AppleSupportPkg and AptioFixPkg into the *drivers* folder, then kexts/ACPI into their respective folders.
-
-Here's what mine looks like:
-
-![Populated EFI folder](https://i.imgur.com/rrJ0Nc4.png)
 
 # Setting up the config.plist
 
