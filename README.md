@@ -157,7 +157,8 @@ originally implemented as a part of AptioMemoryFix.efi, which is no longer maint
 
 #### -Most up-to-date UEFI firmware (check your motherboard vendor website).
 #### -Fast Boot and Hardware Fast Boot disabled in firmware settings if present.
-#### -Above 4G Decoding or similar enabled in firmware settings if present. Note, that on some motherboards (notably ASUS WS-X299-PRO) this option causes adverse effects, and must be disabled. -While no other motherboards with the same issue are known, consider this option to be first to check if you have erratic boot failures.
+#### -Above 4G Decoding or similar enabled in firmware settings if present. Note, that on some motherboards 
+#### (notably ASUS WS-X299-PRO) this option causes adverse effects, and must be disabled. -While no other motherboards with the same issue are known, consider this option to be first to check if you have erratic boot failures.
 
 #### -DisableIoMapper quirk enabled, or VT-d disabled in firmware settings if present, or ACPI DMAR table dropped.
 #### -No ‘slide‘ boot argument present in NVRAM or anywhere else. It is not necessary unless you cannot boot at all or see No slide values are usable! Use custom slide! message in the log.
