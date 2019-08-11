@@ -151,7 +151,7 @@ originally implemented as a part of AptioMemoryFix.efi, which is no longer maint
 
 **NOTES:**
 
--Most up-to-date UEFI firmware (check your motherboard vendor website).**
+**-Most up-to-date UEFI firmware (check your motherboard vendor website).**
 
 **-Fast Boot and Hardware Fast Boot disabled in firmware settings if present.**
 
