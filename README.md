@@ -34,6 +34,8 @@ Requirements:
 * [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases) *FakeSMC is (in this guide) not recommended.*
 * [Emulated-NVRAM](https://github.com/MacProDude/Emulated-NVRAM) *For emulated Nvram on systems with nvram issues.*
 * [Xcode](https://apps.apple.com/pt/app/xcode/id497799835?l=en&mt=12) (or other plist editor) to edit .plist files.
+* [AudioPkg](https://github.com/Goldfish64/AudioPkg)AudioPkg is a set of drivers/applications for supporting audio (currently only Intel HD audio) under UEFI.
+
 * USB drive formatted as MacOS Journaled with GUID partition map. This is to test opencore without overwriting your working Clover.
 * Knowledge of how a hackintosh works and what files yours requires.
 * A previously setup and functioning hackintosh is assumed: **which you are happy to potentially break**.
@@ -41,6 +43,7 @@ Requirements:
 * Sign out of all apple services until you are **sure** you have MLB and ROM sections of smbios set to match your previous Clover set up.  Not doing so could cause said services to cease to function, or **worst case** block your machine.
 * [InsanelyMac-Discord](https://discord.gg/EdmdKRW) If you need any extra help join our discord.
 * [Pavo's OCBuilder ](https://github.com/Pavo-IM/ocbuilder/releases) Creates a Basic EFI Structure with Basic Kexts which are needed to Boot **XCODE App is required**
+
 
 
 # Creating the USB
@@ -291,6 +294,10 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 * **RequireSignature:** See detailed explanation in configuration.pdf.
 * **RequireVault:** For now choose NO.
 * **ScanPolicy:** Allows customization of disk and file system types which are scanned (and shown) by opencore at boot time.
+* **ExposeSensitiveData:** Sensitive data exposure bitmask (sum) to operating system.
+* 0x01 — Expose printable booter path as an UEFI variable.
+* 0x02 — Expose OpenCore version as an UEFI variable.
+* 0x03 - Expose boot-path & open-core versions can be displayed in terminal
 
 **Tools**: Used for running boot time tools like clearing NVRAM, EFIShell or memtest86. Enable if required.
 
@@ -379,6 +386,7 @@ to properly access higher memory in UEFI Boot Services. Not recommended unless r
 
 
 
+
 # Time to boot with OpenCore!
 
 ![AboutThisMac](https://i.imgur.com/BjQwhPC.png)
@@ -386,6 +394,17 @@ to properly access higher memory in UEFI Boot Services. Not recommended unless r
 # Making Opencore your default Bootloader
 
 When you are satisfied opencore boots your system correctly, simply mount your Clover efi partition, (back it up somewhere safe) and overwrite it with your OpenCore one. Certain system BIOS may require you to manually remove Clover as an EFI boot option (rarely some system might need a factory reset to permanently remove it).
+
+
+# How to Enable a bootchime?
+
+* Paste BootChimeDxe.efi & AudioDxe.efi to OC/Drivers folder.
+* Paste BootChimeCgf.efi & HdaCodecDump.efi to OC/Tools folder.
+* Paste the audio wav file you want to play into the EFI root folder.
+* Add BootChimeDxe.efi & AudioDxe.efi drivers to UEFI/Drivers in Config.plist.
+* Add BootChimeCfg.efi & HdaCodecDump.efi drivers to Misc/Tools in Config.plist.
+* Reboot & just hang on a seconds.
+* The default sound reproduction is line 1 of the built-in sound, and the speaker volume depends on the NVRAM setting.
 
 
 # Credit
