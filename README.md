@@ -294,6 +294,10 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 * **RequireSignature:** See detailed explanation in configuration.pdf.
 * **RequireVault:** For now choose NO.
 * **ScanPolicy:** Allows customization of disk and file system types which are scanned (and shown) by opencore at boot time.
+* **ExposeSensitiveData:** Sensitive data exposure bitmask (sum) to operating system.
+* 0x01 — Expose printable booter path as an UEFI variable.
+* 0x02 — Expose OpenCore version as an UEFI variable.
+* 0x03 - Expose boot-path & open-core versions can be displayed in terminal
 
 **Tools**: Used for running boot time tools like clearing NVRAM, EFIShell or memtest86. Enable if required.
 
