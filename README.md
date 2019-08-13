@@ -167,7 +167,7 @@ originally implemented as a part of AptioMemoryFix.efi, which is no longer maint
 #### - While it may not be required, sometimes you have to disable Thunderbolt support, Intel SGX, and Intel Platform Trust in firmware settings present.
 
 
-## Booter-Quirks
+## Booter-Quirks (Boolean)
 
 **AvoidRuntimeDefrag**: This option fixes UEFI runtime services (date, time, NVRAM, power control, etc.), Most but Apple and VMware firmwares need this quirk.
  maybe required for Z390 or other Boards with NVRAM Issues.
@@ -249,7 +249,7 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 
 **Patch**: Kext or kernel patches can be added here. 
 
-**Quirks**:
+## Quirks: (Boolean)
 
 * **AppleCpuPmCfgLock:** Only needed when CFG-Lock can't be disabled in BIOS. Avoid unless necessary.
 * **AppleXcpmCfgLock:** Only needed when CFG-Lock can't be disabled in BIOS. Avoid unless necessary.
@@ -265,8 +265,9 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 
 # 6. Misc
 
-**Boot**: Settings for boot screen.
-* **Timeout:** This sets how long OpenCore will wait until it automatically boots from the default selection.
+## Boot
+
+* **Timeout** This sets how long OpenCore will wait until it automatically boots from the default selection.
 * **ShowPicker:** If you need to see the picker screen, you better choose YES.
 * **UsePicker:** Want to boot with opencore? must choose yes.
 * **Target:** Setting for logging type (by default logging output is hidden). Target 0 fully disables boot log.
@@ -278,7 +279,8 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 ** You won't be able to boot with Open Core Bootloader If you do not set **YES** at UsePicker.
 ** If you want to make macOS the default boot disk, set 'System Preferences > Startup Disk > (Your preferred OS disk)' as the default boot disk.
 
-**Debug**:
+## Debug
+
 * **DisableWatchDog:** (May need to be set to yes if macOS is stalling while logging to file is enabled).
 * **Target:** Logging level. 75 enables full logging to screen and file. 0 disables all logging. 
 
@@ -287,18 +289,25 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 
 **Further information will be added to this section soon.** 
 
-**Security**:
+## Security
+
 * **RequireSignature:** See detailed explanation in configuration.pdf.
 * **RequireVault:** For now choose NO.
 * **ScanPolicy:** Allows customization of disk and file system types which are scanned (and shown) by opencore at boot time.
 
-**Tools**: Used for running boot time tools like clearing NVRAM, EFIShell or memtest86. Enable if required.
+## Tools
+
+* Used for running boot time tools like clearing NVRAM, EFIShell or memtest86. Enable if required.
+
+## Entries
+
+* More Information coming soon.
 
 
 
 # 7. NVRAM
 
-**Add:**
+## Add
 
 **7C436110-AB2A-4BBB-A880-FE41995C9F82 (APPLE_BOOT_VARIABLE_GUID)**
 
@@ -326,7 +335,9 @@ leaving the value as ```00000000``` in the config.plist file).**
 
 # 8. Platforminfo
 
-**Automatic**: NO (setting YES will provide default values from the Generic section, which in some cases may be acceptable).
+* This section used be filled in correctly to avoid errors, if using non automatic setup make sure (DATA, BOOLEAN, STRING) types are set as shown in the ```Sampleconfig.plist```
+
+**Automatic**: NO (setting YES will provide default values from the Generic section, which in some cases may be acceptable, also maybe required when booting a fresh install from createinstallmedia USB).
 
 **Generic**:
 
@@ -354,18 +365,18 @@ leaving the value as ```00000000``` in the config.plist file).**
 
 # 9. UEFI
 
-**ConnectDrivers**: YES
+* **ConnectDrivers**: YES
 
-**Drivers**: Add your .efi drivers here. (HFSPlus, AptoMemoryFix, APFSLoader, etc)
+* **Drivers**: Add your .efi drivers here. (HFSPlus, AptoMemoryFix, APFSLoader, etc)
 
-**Protocols**:
+* **Protocols**:
 
 * **AppleBootPolicy:** (Ensures APFS compatibility on VMs or legacy Macs).
 * **ConsoleControl:** Needed on most APTIO firmwares otherwise you may see text output during booting instead of Apple logo.
 * **DataHub:** (Reinstalls Data Hub).
 * **DeviceProperties:** (Ensures full compatibility on VMs or legacy Macs).
 
-**Quirks**:
+## Quirks:
 
 * **ExitBootServicesDelay:** 0 (Switch to 5 if running ASUS Z87-Pro with FileVault2).
 * **IgnoreInvalidFlexRatio:** Required for almost all pre-skylake based systems.
