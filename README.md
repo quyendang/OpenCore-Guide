@@ -1,4 +1,4 @@
-![logo](https://i.imgur.com/vMJLVLD.png)
+![logo](https://i.imgur.com/Srq3njo.png)
 
 # What is OpenCore 0.5.0? 
 
