@@ -1,9 +1,9 @@
-![logo](https://i.imgur.com/Srq3njo.png)
+![logo](https://i.imgur.com/SR3IVCx.png)
 
-# What is OpenCore 0.0.4? 
+# What is OpenCore? 
 
 
-OpenCore is an alternative bootloader to CloverEFI or Chameleon. It is not only for Hackintosh and can also be used on real macs for purposes that require an emulated EFI. It also aims to have the ability to boot Windows and Linux without the need for using different acpi tables. It has a clean codebase and aims to stay closer to how a real mac bootloader functions. Kext injection has been greatly improved. While already functioning well,
+### OpenCore is an alternative bootloader to CloverEFI or Chameleon. It is not only for Hackintosh and can also be used on real macs for purposes that require an emulated EFI. It also aims to have the ability to boot Windows and Linux without the need for using different acpi tables. It has a clean codebase and aims to stay closer to how a real mac bootloader functions. Kext injection has been greatly improved. While already functioning well,
 OpenCore should be considered in Public Beta stage at this time and is intended to be used by experienced hackintosh users, developers, or users who are happy to recover a system which fails to boot or becomes broken in some way.
 
 **This guide may not always be able to keep up with every change to OpenCore,** 
@@ -11,38 +11,43 @@ OpenCore should be considered in Public Beta stage at this time and is intended 
 **please keep that in mind when compiling the latest version of OpenCore.**
 **To be safe, use release versions of OpenCore rather than the latest commits.** (0.0.4 Current Release)
 
-This guide is intended to complement the excellent opencore "configuration.pdf" rather than be used instead of it. If you did not already do so, please read it now: 
-[Full manual](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Configuration.pdf)
+## This guide is intended to complement the excellent opencore "configuration.pdf" rather than be used instead of it. If you did not already do so, please read it now: 
+## [Full Documentation From Acidanthera GitHub](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Configuration.pdf)
 
 
 # Current known issues
-* Refer to opencore bugtracker for current known bugs [here](https://github.com/acidanthera/bugtracker/issues) 
+### Refer to opencore bugtracker for current known bugs [here](https://github.com/acidanthera/bugtracker/issues) 
 
-## If reporting issues, first study the documentation, then other current issues, and check the issue you are reporting is actually a bug instead of mis-configuration or user error.
+### Things to note with OpenCore
 
-
-
+* OpenCore supports both UEFI and Legacy boot options.
+* Automatic drive/partition boot is handled by StartUp Disk just like a real Mac, this is also referred to as "bless".
+* Make sure to have kexts like Lilu and VoodooPS2Controller are to be injected first before kexts that require them like WhateverGreen, VirtualSMC, keyboard/Mouse/Trackpad and etc.
+* ACPI patches and SSDTs apply to all operating systems.
+* Some systems like Z97 require pure UEFI mode for booting (also known as Windows 8/10 mode).
+* AptioMemoryFix has been split between OpenCore and FwRuntimeServices.efi, please use that instead from 0.0.4 Onwards.
 
 # Getting Started
 
-Requirements:
+## Requirements:
 
-* [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases) (Advanced users can build the latest from source code, less advanced users should stick to the builds on the release page).
-* [AppleSupportPkg](https://github.com/acidanthera/AppleSupportPkg/releases)
-* [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases)
-* [Lilu](https://github.com/acidanthera/Lilu/releases)
-* [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases) *FakeSMC is (in this guide) not recommended.*
-* [Emulated-NVRAM](https://github.com/MacProDude/Emulated-NVRAM) *For emulated Nvram on systems with nvram issues.*
-* [Xcode](https://apps.apple.com/pt/app/xcode/id497799835?l=en&mt=12) (or other plist editor) to edit .plist files.
-* [AudioPkg](https://github.com/Goldfish64/AudioPkg) AudioPkg is a set of drivers/applications for supporting audio (currently only Intel HD audio) under UEFI.
+### [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases) (Advanced users can build the latest from source code, less advanced users should stick to the builds on the release page).
+### [AppleSupportPkg](https://github.com/acidanthera/AppleSupportPkg/releases)
+### [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases)
+### [Lilu](https://github.com/acidanthera/Lilu/releases)
+### [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases) *FakeSMC is (in this guide) not recommended.*
+### [Emulated-NVRAM](https://github.com/MacProDude/Emulated-NVRAM) *For emulated Nvram on systems with nvram issues.*
+### [Xcode](https://apps.apple.com/pt/app/xcode/id497799835?l=en&mt=12) (or other plist editor) to edit .plist files.
+### [AudioPkg](https://github.com/Goldfish64/AudioPkg) AudioPkg is a set of drivers/applications for supporting audio (currently only Intel HD audio) under UEFI.
 
-* USB drive formatted as MacOS Journaled with GUID partition map. This is to test opencore without overwriting your working Clover.
-* Knowledge of how a hackintosh works and what files yours requires.
-* A previously setup and functioning hackintosh is assumed: **which you are happy to potentially break**.
-* Time and patience. Without these, you are wasting your effort.
-* Sign out of all apple services until you are **sure** you have MLB and ROM sections of smbios set to match your previous Clover set up.  Not doing so could cause said services to cease to function, or **worst case** block your machine.
-* [InsanelyMac-Discord](https://discord.gg/EdmdKRW) If you need any extra help join our discord.
-* [Pavo's OCBuilder ](https://github.com/Pavo-IM/ocbuilder/releases) Creates a Basic EFI Structure with Basic Kexts which are needed to Boot **XCODE App is required**
+`USB drive formatted as MacOS Journaled with GUID partition map. This is to test opencore without overwriting your working Clover.
+Knowledge of how a hackintosh works and what files yours requires.
+A previously setup and functioning hackintosh is assumed: which you are happy to potentially break.
+Time and patience. Without these, you are wasting your effort.
+*Sign out of all apple services until you are sure you have MLB and ROM sections of smbios set to match your previous Clover set up.  Not doing so could cause said services to cease to function, or worst case block your machine.`
+
+* ### [InsanelyMac-Discord](https://discord.gg/EdmdKRW) If you need any extra help join our discord.
+* ### [Pavo's OCBuilder ](https://github.com/Pavo-IM/ocbuilder/releases) Creates a Basic EFI Structure with Basic Kexts which are needed to Boot **XCODE App is required**
 
 
 
@@ -158,55 +163,55 @@ originally implemented as a part of AptioMemoryFix.efi, which is no longer maint
 
 **NOTES:**
 
-#### - Most up-to-date UEFI firmware (check your motherboard vendor website).
-#### - Fast Boot and Hardware Fast Boot disabled in firmware settings if present.
-#### - Above 4G Decoding or similar enabled in firmware settings if present. Note, that on some motherboards (notably ASUS WS-X299-PRO) this option causes adverse effects, and must be disabled. -While no other motherboards with the same issue are known, consider this option to be first to check if you have erratic boot failures.
-#### - DisableIoMapper quirk enabled, or VT-d disabled in firmware settings if present, or ACPI DMAR table dropped.
-#### - No ‘slide‘ boot argument present in NVRAM or anywhere else. It is not necessary unless you cannot boot at all or see No slide values are usable! Use custom slide! message in the log.
-#### - CFG Lock (MSR 0xE2 write protection) disabled in firmware settings if present. Cconsider patching it if you have enough skills and no option is available. See VerifyMsrE2 nots for more details.
-#### - CSM (Compatibility Support Module) disabled in firmware settings if present. You may need to flash GOP ROM on NVIDIA 6xx/AMD 2xx or older. Use GopUpdate or AMD UEFI GOP MAKER in case you are not sure how.
-#### - EHCI/XHCI Hand-off enabled in firmware settings only if boot stalls unless USB devices are disconnected.
-#### - VT-x, Hyper Threading, Execute Disable Bit enabled in firmware settings if present.
-#### - While it may not be required, sometimes you have to disable Thunderbolt support, Intel SGX, and Intel Platform Trust in firmware settings present.
+- Most up-to-date UEFI firmware (check your motherboard vendor website).
+- Fast Boot and Hardware Fast Boot disabled in firmware settings if present.
+- Above 4G Decoding or similar enabled in firmware settings if present. Note, that on some motherboards (notably ASUS WS-X299-PRO) this option causes adverse effects, and must be disabled. While no other motherboards with the same issue are known, consider this option to be first to check if you have erratic boot failures.
+- DisableIoMapper quirk enabled, or VT-d disabled in firmware settings if present, or ACPI DMAR table dropped.
+- No ‘slide‘ boot argument present in NVRAM or anywhere else. It is not necessary unless you cannot boot at all or see No slide values are usable! Use custom slide! message in the log.
+- CFG Lock (MSR 0xE2 write protection) disabled in firmware settings if present. Cconsider patching it if you have enough skills and no option is available. See VerifyMsrE2 nots for more details.
+- CSM (Compatibility Support Module) disabled in firmware settings if present. You may need to flash GOP ROM on NVIDIA 6xx/AMD 2xx or older. Use GopUpdate or AMD UEFI GOP MAKER in case you are not sure how.
+- EHCI/XHCI Hand-off enabled in firmware settings only if boot stalls unless USB devices are disconnected.
+- VT-x, Hyper Threading, Execute Disable Bit enabled in firmware settings if present.
+- While it may not be required, sometimes you have to disable Thunderbolt support, Intel SGX, and Intel Platform Trust in firmware settings present.
 
 
 
 ## Booter-Quirks (Boolean)
 
 **AvoidRuntimeDefrag**: This option fixes UEFI runtime services (date, time, NVRAM, power control, etc.), Most but Apple and VMware firmwares need this quirk.
- maybe required for Z390 or other Boards with NVRAM Issues.
+ maybe required for Z390 or other Boards with NVRAM Issues. ```Default=YES```
  
 **DisableVariableWrite** : This is a security option allowing one to restrict NVRAM access in macOS. This quirk requires ```OC_FIRMWARE_RUNTIME```
 protocol implemented in ```FwRuntimeServices.efi.``` can also be used as an ugly workaround to buggy UEFI runtime services implementations that
-fail to write variables to NVRAM and break the rest of the operating system. **Default Value is False/NO**
+fail to write variables to NVRAM (Z390) and break the rest of the operating system. ```Default=NO```
 
-**DiscardHibernateMap** : This may be used to workaround buggy memory maps on older hardware, and is now considered rare legacy.
+**DiscardHibernateMap** : This may be used to workaround buggy memory maps on older hardware, and is now considered rare legacy. ```Default=NO```
 
 **EnableSafeModeSlide** : The necessity of this quirk is determined by safe mode availability. If booting to safe mode fails, this option
 can be tried to be enabled. This option is relevant to the users that have issues booting to safe mode (e.g. by holding shift or using -x boot
 argument). By default safe mode forces 0 slide as if the system was launched with slide=0 boot argument. This
 quirk tries to patch boot.efi to lift that limitation and let some other value (from 1 to 255) be used. This quirk
-requires ```ProvideCustomSlide``` to be enabled. **Default Value is False/NO**
+requires ```ProvideCustomSlide``` to be enabled. ```Default=YES```
 
 **EnableWriteUnprotector** : This option bypasses RˆX permissions in code pages of UEFI runtime services by removing write protection (WP)
 bit from CR0 register during their execution. This quirk requires ```OC_FIRMWARE_RUNTIME``` protocol implemented in
-```FwRuntimeServices.efi```. **Default Value is False/NO**
+```FwRuntimeServices.efi```. ```Default=YES```
 
 **ForceExitBootServices** : Try to ensure that ExitBootServices call succeeds even with outdated MemoryMap key argument, this quirk is determined by early boot crashes of
-the firmware. **Default Value is False/NO**
+the firmware. ```Default=NO```
 
 **ProtectCsmRegion** : The necessity of this quirk is determined by artifacts and sleep wake issues. As ```AvoidRuntimeDefrag```
-resolves a similar problem, no known firmwares should need this quirk. Default Value is False/NO
+resolves a similar problem, no known firmwares should need this quirk. ```Default=No```
 
 **ProvideCustomSlide** : Provide custom KASLR slide on low memory, this option forces macOS to use a
 pseudo random value among the available ones. This also ensures that ```slide=``` argument is never passed to the
-operating system for security reasons. **Default Value is False/NO**
+operating system for security reasons. ```Default=YES```
 
 **SetupVirtualMap** : The necessity of this quirk is determined by early boot failures, workarounds the problem by performing early boot identity mapping of assigned virtual
- addresses to physical memory. **Default Value is False/NO**
+ addresses to physical memory. ```Default=YES```
 
 **ShrinkMemoryMap** : Select firmwares have very large memory maps, which do not fit Apple kernel, permitting up to 64 slots for
-runtime memory. This quirk attempts to unify contiguous slots of similar types to prevent boot failures. **Default Value is False/NO**
+runtime memory. This quirk attempts to unify contiguous slots of similar types to prevent boot failures. ```Default=NO```
 
 # Fixing Certain NVRAM Issues
 
@@ -283,6 +288,31 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 ** You won't be able to boot with Open Core Bootloader If you do not set **YES** at UsePicker.
 ** If you want to make macOS the default boot disk, set 'System Preferences > Startup Disk > (Your preferred OS disk)' as the default boot disk.
 
+
+## Clean Boot Without Text
+
+### Recommended Configuration:
+
+**UEFI/Protocols:**
+
+* **ConsoleControl** set to ```True```
+
+**UEFI/Quirks:**
+
+* **ProvideConsoleGop** set to ```True```
+
+* **IgnoreTextInGraphics:** set to ```True```
+
+* **SanitiseClearScreen:** set to ```True```
+
+**Misc/Boot:**
+
+* **ConsoleBehaviourOs:** set to ```Graphics```
+
+* **ConsoleBehaviourUi:** set to ```Text```
+
+
+
 ## Debug
 
 * **DisableWatchDog:** (May need to be set to yes if macOS is stalling while logging to file is enabled).
@@ -299,18 +329,37 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 * **RequireVault:** For now choose NO.
 * **ScanPolicy:** Allows customization of disk and file system types which are scanned (and shown) by opencore at boot time.
 * **ExposeSensitiveData:** Sensitive data exposure bitmask (sum) to operating system.
-* 0x01 — Expose printable booter path as an UEFI variable.
-* 0x02 — Expose OpenCore version as an UEFI variable.
-* 0x03 — Expose boot-path & open-core versions can be displayed in terminal.
+
+
+**Scan Policy  in (Bits)**
+
+ScanPolicy value, add the values with a hexidecimal calculator, macOS caluclator app has this built in with ⌘+3). Add your values up, and add this hexidecimal value to
+ScanPolicy, this will need converting to a decimal value which Xcode will automatically convert for you once you paste it.
+
+```
+0x00000001 - Known File Systems Only
+0x00000002 - Known Device Types.
+0x00000200 - HFS File System Scan
+0x00000400 - Allow EFI Partition Scan
+0x00010000 - Allow Sata Scan
+0x00020000 - SAS Scan
+0x00040000 - SCSI Scan
+0x00080000 - NVMe Scan
+0x00100000 - CD/DVD Scan
+0x00200000 - USB Drive Scan
+0x00400000 - FireWire Scan
+0x00800000 - SD/Card Media Scan
+```
+ 
 
 ## Tools
 
-* Used for running boot time tools like clearing NVRAM, EFIShell or memtest86. Enable if required.
+Used for running boot time tools like clearing NVRAM, EFIShell or memtest86. Enable if required.
 
 
 ## Entries
 
-* More Information coming soon.
+More Information coming soon.
 
 
 
@@ -323,14 +372,16 @@ Order of kexts is important, they are loaded in this order. Plugins for other ke
 
 * **boot-args:** -v debug=0x100 keepsyms=1 , etc (Boot flags)
 * **csr-active-config:** <00000000> **(Settings for SIP, recommended to manully change this in terminal by booting in Recovery partition and use csrutil to set value.
-leaving the value as ```00000000``` in the config.plist file).**
-   * `00000000` - SIP completely enabled
-   * `30000000` - Allow unsigned kexts and writing to protected fs locations
-   * `67000000` - SIP completely disabled
+```
+   leaving the value as ```00000000``` in the config.plist file).**
+   `00000000` - SIP completely enabled
+   `30000000` - Allow unsigned kexts and writing to protected fs locations
+   `67000000` - SIP completely disabled
+   ```
 * **nvda_drv:**  <> (For enabling Nvidia WebDrivers, set to 31 if running a Maxwell or Pascal GPU. This is the equivalent to setting nvda_drv=1 but instead we convert it from text to hex.
 * prev-lang:kbd: <> (Needed for non-latin keyboards) If you find Russian, you didnt read the manual...
 
-**4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14 (APPLE_VENDOR_VARIABLE_GUID)**
+```4D1EDE05-38C7-4A6A-9CC6-4BCCA8B38C14 (APPLE_VENDOR_VARIABLE_GUID)```
 * UIScale : Boot time screen resolution. May need to be set to 02 to enable HiDPI scaling in FileVault 2 UEFI password interface and boot screen logo. but using a 10, you can see the big apple logo with HiDPI.
 * This will fail when console handle has no GOP protocol. When the firmware does not provide it, it can be added with ProvideConsoleGop UEFI quirk set to 'YES´and in protocols section ´ConsoleControl´to YES.
 
@@ -340,7 +391,45 @@ leaving the value as ```00000000``` in the config.plist file).**
 
 **LegacySchema:** Used for assigning nvram variable on such systems. (This is written to the NVRAM.plist).
 
-[For futher information see the Emulated NVRAM Guide](https://macprodude.github.io/Emulated-NVRAM/)
+# Emulated NVRAM
+
+So this section is for those who don't have native NVRAM, Hardware to have incompatible native NVRAM with macOS are the Z390-300 series chipsets:
+
+* B360
+* B365
+* H310
+* H370
+* Q370
+* Z390
+
+## Making the nvram.plist
+
+Outlay's to making a NVRAM.plist file, Requires the following:
+
+Change these settings within the config.plist:
+
+**Booter Section**
+* `DisableVariableWrite`: set to `YES`
+**NVRAM Section**
+* `LegacyEnable`: set to `YES`
+* `LegacySchema`: NVRAM variables set and injected into OpenCore and compares these variables present in nvram.plist
+**Security Section**
+* `ExposeSensitiveData`: set to `0x3` (Which allows all data exposure)
+
+And within your EFI:
+
+* `FwRuntimeServices.efi` (Needed for sleep, wake and shutdown and other services to work correctly (Goes in the EFI/OC/Drivers Folder)
+
+Now grab the 'LogoutHook.command' and place it somewhere safe like within your user directory:
+
+``/Users/(your username)/LogoutHook/LogoutHook.command``
+
+Open up terminal and run the following:
+
+``sudo defaults write com.apple.loginwindow LogoutHook /Users/(your username)/LogoutHook/LogoutHook.command``
+
+Now you have emulated NVRAM, Just to note that for macOS to support the `-x` flag and work correctly which is unavailable on 10.12 and below. ``nvram.mojave`` fixes this by injecting it instead of the system based one.
+
 
 
 # 8. Platforminfo
@@ -348,6 +437,25 @@ leaving the value as ```00000000``` in the config.plist file).**
 * This section used be filled in correctly to avoid errors, if using non automatic setup make sure (DATA, BOOLEAN, STRING) types are set as shown in the ```Sampleconfig.plist```
 
 **Automatic**: NO (setting YES will provide default values from the Generic section, which in some cases may be acceptable, also maybe required when booting a fresh install from createinstallmedia USB).
+
+* Use ```MacSerial``` to generate your SMBIOS
+* MacSerial Example in terminal ```macserial -a | grep -i iMac19,1```
+
+
+Output Example from above command:
+```
+iMac19,1 | C02YC2Y1JV3Q | C02909403CDLNV9A8
+iMac19,1 | C02YX1Y9JV3Q | C02926401GULNV91H
+iMac19,1 | C02YN07JJV3Q | C02918207J9LNV91M
+iMac19,1 | C02YJKZTJV3Q | C029142004NLNV9A8
+iMac19,1 | C02Y6QY5JV3Q | C02905100CDLNV9FB
+iMac19,1 | C02Z4EY6JV3Q | C02930310GULNV98C
+iMac19,1 | C02Y1VY1JV3Q | C02853130GULNV91M
+iMac19,1 | C02ZL06PJV3Q | C029438024NLNV9JA
+iMac19,1 | C02YX072JV3Q | C02926500CDLNV9CB
+iMac19,1 | C02ZW3YFJV3Q | C02952301GULNV9UE
+```
+
 
 **Generic**:
 
@@ -400,9 +508,16 @@ to properly access higher memory in UEFI Boot Services. Not recommended unless r
 
 
 
+# AMD Zen Based CPU's and Threadripper
+
+* [Default OpenCore Config for AMD](https://drive.google.com/open?id=19HRyLcuCyN9YWoQArJA1QTbHduSH1wyE)
+
+Further Information regarding AMD CPU Booting with opencore and how to set various patches can be found here: [AMD OSX Github](https://github.com/AMD-OSX/AMD_Vanilla)
+
 
 
 # Time to boot with OpenCore!
+
 
 ![AboutThisMac](https://i.imgur.com/BjQwhPC.png)
 
@@ -411,21 +526,55 @@ to properly access higher memory in UEFI Boot Services. Not recommended unless r
 When you are satisfied opencore boots your system correctly, simply mount your Clover efi partition, (back it up somewhere safe) and overwrite it with your OpenCore one. Certain system BIOS may require you to manually remove Clover as an EFI boot option (rarely some system might need a factory reset to permanently remove it).
 
 
+# Legacy Install
+
+OpenCore supports DuetPkg which emulates a UEFI environment for legacy systems.
+
+To start, you need the following:
+
+* BootInstall.command
+* Install source
+
+
+Within your OpenCore build folder, navigate to `Utilities/BootInstall`. Here you'll find a file called `BootInstall.command`. What this does is install DuetPkg to your desired drive.
+
+
+Now you'll want to run `BootInstall.command`, do note that you may need `sudo` for this to work correctly on newer versions of macOS
+
+```text
+sudo Utilities/BootInstall/BootInstall.command
+```
+
+
+This will give you a list of available disks, choose yours and you will be prompted to write a new MBR. Choose yes`[y]` and you'll be finished.
+This will provide you with an EFI partition with a `boot` file, this is where we'll add our OpenCore EFI.
+
+
 # How to Enable a bootchime?
 
-* Paste BootChimeDxe.efi & AudioDxe.efi to OC/Drivers folder.
-* Paste BootChimeCgf.efi & HdaCodecDump.efi to OC/Tools folder.
-* Boot chime can be played by putting wav file in EFI root folder.
+* Copy BootChimeDxe.efi & AudioDxe.efi to OC/Drivers folder.
+* Copy BootChimeCgf.efi & HdaCodecDump.efi to OC/Tools folder.
+* Bootchime can be played through the WAV file in the EFI root folder.
 * Add BootChimeDxe.efi & AudioDxe.efi drivers to UEFI/Drivers in Config.plist.
 * Add BootChimeCfg.efi & HdaCodecDump.efi drivers to Misc/Tools in Config.plist.
-* Reboot & just hang on a seconds.
+* Reboot & wait a few seconds.
 * The default sound reproduction is line 1 of the built-in sound, and the speaker volume depends on the NVRAM setting.
 
 
-# Credit
+# Credits
 * [Apple](https://www.apple.com) for MacOS.
 * [Acidanthera](https://github.com/acidanthera) for everything they contribute to hackintosh. :)
-* [vit9696](https://github.com/vit9696) for OpenCore.
 * [Pavo-IM](https://github.com/Pavo-IM) for Opencore Builder and edits
 * [ZISQO](https://github.com/zisqo) to translate this guide for korean language and update gigabyte and asus data.
 * [MacProDude](https://github.com/MacProDude) for images and guide rewrite
+* [Shaneee](https://github.com/Shaneee92) For AMD Kernel Updates and AMD Community for Zen CPU's
+* [InsanelyMac](https://www.insanelymac.com) For finding issues and solutions to different hardware issues
+
+
+# Developers of OpenCore:
+
+* [Download-Fritz](https://github.com/Download-Fritz)
+* [Goldfish64](https://github.com/Goldfish64)
+* [savvamitrofanov](https://github.com/savvamitrofanov)
+* [vit9696](https://github.com/vit9696)
+
