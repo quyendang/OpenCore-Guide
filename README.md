@@ -1,6 +1,7 @@
 ![logo](https://i.imgur.com/SR3IVCx.png)
 
-# What is OpenCore? 
+# Getting Started With OpenCore 0.5.0
+A brief guide to using the OpenCore boot-loader for hackintoshes
 
 
 ### OpenCore is an alternative bootloader to CloverEFI or Chameleon. It is not only for Hackintosh and can also be used on real macs for purposes that require an emulated EFI. It also aims to have the ability to boot Windows and Linux without the need for using different acpi tables. It has a clean codebase and aims to stay closer to how a real mac bootloader functions. Kext injection has been greatly improved. While already functioning well,
@@ -567,7 +568,7 @@ This will provide you with an EFI partition with a `boot` file, this is where we
 * [Pavo-IM](https://github.com/Pavo-IM) for Opencore Builder and edits
 * [ZISQO](https://github.com/zisqo) to translate this guide for korean language and update gigabyte and asus data.
 * [MacProDude](https://github.com/MacProDude) for images and guide rewrite
-* [Shaneee](https://github.com/Shaneee92) For AMD Kernel Updates and AMD Community for Zen CPU's
+* [AlGrey](https://amd-osx.com/forum/memberlist.php?mode=viewprofile&u=10918&sid=e0feb8a14a97be482d2fd68dbc268f97) AMD Kernel patches
 * [InsanelyMac](https://www.insanelymac.com) For finding issues and solutions to different hardware issues
 
 
